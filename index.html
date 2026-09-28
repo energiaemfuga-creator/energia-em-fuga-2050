@@ -2,29 +2,182 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Energia em Fuga</title> 
-   <link rel="stylesheet" href="assets/style.css">
+    <title>Energia em Fuga</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+
 </head>
 
-<body>
 
-    <h1>ENERGIA EM FUGA</h1>
+<body class="pagina-inicial">
 
-    <h2>SISTEMA EM EMERGÊNCIA</h2>
+    <main class="tela-inicial">
 
-    <p>
-        O sistema energético entrou em emergência.
-        Sua equipe precisa completar os desafios
-        para reativá-lo.
-    </p>
+        <!-- CABEÇALHO DO SISTEMA -->
 
-    <input type="text" id="nomeEquipe" placeholder="Nome da equipe">
+        <div class="barra-superior">
 
-  <button onclick="iniciarMissao()">INICIAR MISSÃO</button>
-<script src="assets/app.js"></script> 
+            <div class="identidade-sistema">
+
+                <span class="icone-energia">⚡</span>
+
+                <span>ENERGIA EM FUGA</span>
+
+            </div>
+
+
+            <div class="status-sistema">
+
+                <span class="ponto-status"></span>
+
+                SISTEMA ONLINE
+
+            </div>
+
+        </div>
+
+
+        <!-- PAINEL PRINCIPAL -->
+
+        <section class="painel-emergencia">
+
+            <div class="alerta">
+
+                <span class="alerta-icone">⚠</span>
+
+                <span>ALERTA DE EMERGÊNCIA</span>
+
+            </div>
+
+
+            <h1>
+
+                SISTEMA<br>
+
+                <span>EM EMERGÊNCIA</span>
+
+            </h1>
+
+
+            <div class="linha-diagnostico"></div>
+
+
+            <p class="mensagem-principal">
+
+                A rede energética foi comprometida.
+
+                <br>
+
+                Sua equipe foi convocada para restaurar
+
+                o sistema antes que o tempo se esgote.
+
+            </p>
+
+
+            <!-- IDENTIFICAÇÃO -->
+
+            <div class="identificacao">
+
+                <label for="nomeEquipe">
+
+                    IDENTIFICAÇÃO DA EQUIPE
+
+                </label>
+
+
+                <div class="campo-equipe">
+
+                    <span>◉</span>
+
+                    <input
+
+                        type="text"
+
+                        id="nomeEquipe"
+
+                        placeholder="Digite o nome da equipe"
+
+                        autocomplete="off"
+
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTÃO -->
+
+            <button
+
+                class="botao-missao"
+
+                onclick="iniciarMissao()"
+
+            >
+
+                <span>INICIAR MISSÃO</span>
+
+                <span class="seta">→</span>
+
+            </button>
+
+
+            <!-- STATUS -->
+
+            <div class="painel-status">
+
+                <div class="status-titulo">
+
+                    <span>STATUS DO SISTEMA</span>
+
+                    <span>CRÍTICO</span>
+
+                </div>
+
+
+                <div class="barra-progresso">
+
+                    <div class="progresso"></div>
+
+                </div>
+
+
+                <div class="status-informacoes">
+
+                    <span>INTEGRIDADE DA REDE</span>
+
+                    <span>04%</span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+
+        <footer class="rodape-inicial">
+
+            <span>PROTOCOLO DE RECUPERAÇÃO ENERGÉTICA</span>
+
+            <span>v1.0</span>
+
+        </footer>
+
+    </main>
+
+
+    <script src="assets/app.js"></script>
+
 </body>
 
 </html>
