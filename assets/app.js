@@ -60,3 +60,4 @@ function verificarSala1() {
 function irParaSala2() {
     window.location.href = "sala2.html";
 }
+console.log("APP.JS DA ENERGIA EM FUGA FOI CARREGADO");
