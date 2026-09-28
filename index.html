@@ -9,12 +9,11 @@
 
     <title>Energia em Fuga</title>
 
-    <!-- Fonte futurista -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
         rel="stylesheet"
     >
 
@@ -25,184 +24,212 @@
 
 <body>
 
-    <div class="pagina">
+    <main class="inicio">
+
+        <!-- ELEMENTOS DECORATIVOS -->
+
+        <div class="decoracao estrela estrela-1">✦</div>
+        <div class="decoracao estrela estrela-2">✦</div>
+        <div class="decoracao raio raio-1">⚡</div>
+        <div class="decoracao raio raio-2">⚡</div>
+        <div class="decoracao sol">☀</div>
+
 
         <!-- CABEÇALHO -->
 
-        <header class="topo">
+        <header class="cabecalho">
 
-            <div class="logo">
+            <div class="mini-logo">
 
-                <span class="logo-raio">⚡</span>
+                <span>⚡</span>
 
-                <span>ENERGIA EM FUGA</span>
+                ENERGIA EM FUGA
 
             </div>
 
-            <div class="status">
+            <div class="missao">
 
-                <span class="bolinha"></span>
-
-                SISTEMA ONLINE
+                MISSÃO 2050
 
             </div>
 
         </header>
 
 
-        <!-- CONTEÚDO PRINCIPAL -->
+        <!-- ÁREA PRINCIPAL -->
 
-        <main class="conteudo">
+        <section class="hero">
 
-            <!-- TÍTULO -->
 
-            <section class="titulo">
+            <!-- ILUSTRAÇÃO -->
 
-                <p class="codigo-missao">
-                    PROTOCOLO 2050
-                </p>
+            <div class="ilustracao">
+
+                <div class="nuvem nuvem-1"></div>
+
+                <div class="nuvem nuvem-2"></div>
+
+
+                <div class="sol-central">
+
+                    ☀️
+
+                </div>
+
+
+                <div class="torre torre-1">
+
+                    <div class="torre-topo"></div>
+
+                    <div class="torre-linha"></div>
+
+                    <div class="torre-linha"></div>
+
+                    <div class="torre-linha"></div>
+
+                </div>
+
+
+                <div class="torre torre-2">
+
+                    <div class="torre-topo"></div>
+
+                    <div class="torre-linha"></div>
+
+                    <div class="torre-linha"></div>
+
+                    <div class="torre-linha"></div>
+
+                </div>
+
+
+                <div class="turbina turbina-1">
+
+                    <div class="helice"></div>
+
+                    <div class="mastro"></div>
+
+                </div>
+
+
+                <div class="turbina turbina-2">
+
+                    <div class="helice"></div>
+
+                    <div class="mastro"></div>
+
+                </div>
+
+
+                <div class="chao"></div>
+
+
+                <div class="energia energia-1">⚡</div>
+
+                <div class="energia energia-2">⚡</div>
+
+                <div class="energia energia-3">✦</div>
+
+            </div>
+
+
+            <!-- CARTÃO PRINCIPAL -->
+
+            <div class="cartao">
+
+                <div class="etiqueta">
+
+                    ⚠ MISSÃO ATIVADA
+
+                </div>
+
 
                 <h1>
+
                     ENERGIA<br>
-                    <span>EM FUGA</span>
+
+                    <span>EM FUGA!</span>
+
                 </h1>
 
+
                 <p class="subtitulo">
-                    MISSÃO DE RECUPERAÇÃO ENERGÉTICA
+
+                    UM DESAFIO PELA ENERGIA<br>
+
+                    DO FUTURO
+
                 </p>
 
-            </section>
+
+                <div class="linha"></div>
 
 
-            <!-- IMAGEM -->
+                <p class="descricao">
 
-            <section class="imagem-container">
+                    O sistema energético entrou em emergência!
 
-                <img
-                    src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80"
-                    alt="Rede elétrica e energia"
-                >
+                    Sua equipe precisa resolver os desafios,
 
-                <div class="imagem-overlay"></div>
+                    descobrir os códigos e restaurar a energia.
 
-                <div class="imagem-legenda">
-
-                    <span>⚡</span>
-
-                    REDE ENERGÉTICA
-
-                </div>
-
-            </section>
-
-
-            <!-- ALERTA -->
-
-            <section class="alerta">
-
-                <div class="alerta-topo">
-
-                    <span class="alerta-icone">⚠</span>
-
-                    <span>ALERTA DE SISTEMA</span>
-
-                    <span class="alerta-codigo">
-                        ER-001
-                    </span>
-
-                </div>
-
-
-                <h2>
-                    SISTEMA EM EMERGÊNCIA
-                </h2>
-
-
-                <p>
-                    A rede energética foi comprometida.
-                    Sua equipe precisa completar os desafios
-                    e restaurar o sistema antes que o tempo se esgote.
                 </p>
 
-            </section>
 
+                <!-- EQUIPE -->
 
-            <!-- IDENTIFICAÇÃO -->
+                <div class="equipe">
 
-            <section class="missao">
+                    <label for="nomeEquipe">
 
-                <label for="nomeEquipe">
-                    IDENTIFICAÇÃO DA EQUIPE
-                </label>
+                        👥 NOME DA EQUIPE
 
+                    </label>
 
-                <div class="input-container">
-
-                    <span>◉</span>
 
                     <input
+
                         type="text"
+
                         id="nomeEquipe"
-                        placeholder="Digite o nome da equipe"
+
+                        placeholder="Digite o nome da equipe..."
+
                         autocomplete="off"
+
                     >
 
                 </div>
 
 
                 <button
-                    class="botao"
+
+                    class="botao-iniciar"
+
                     onclick="iniciarMissao()"
+
                 >
 
-                    <span>⚡ INICIAR MISSÃO</span>
+                    <span>COMEÇAR A MISSÃO</span>
 
-                    <span class="seta">→</span>
+                    <strong>→</strong>
 
                 </button>
 
-            </section>
 
+                <div class="rodape-cartao">
 
-            <!-- STATUS -->
+                    <span>☀️ ENERGIA</span>
 
-            <section class="status-rede">
+                    <span>🌱 SUSTENTABILIDADE</span>
 
-                <div class="status-linha">
-
-                    <span>
-                        INTEGRIDADE DA REDE
-                    </span>
-
-                    <strong>
-                        04%
-                    </strong>
+                    <span>⚡ DESAFIO</span>
 
                 </div>
 
+            </div>
 
-                <div class="barra">
-
-                    <div class="progresso"></div>
-
-                </div>
-
-
-                <div class="status-linha inferior">
-
-                    <span>
-                        STATUS
-                    </span>
-
-                    <strong>
-                        CRÍTICO
-                    </strong>
-
-                </div>
-
-            </section>
-
-        </main>
+        </section>
 
 
         <!-- RODAPÉ -->
@@ -210,16 +237,14 @@
         <footer>
 
             <span>
-                ENERGIA EM FUGA — ESCAPE ROOM
-            </span>
 
-            <span>
-                v1.0
+                ENERGIA EM FUGA — ESCAPE ROOM EDUCATIVO
+
             </span>
 
         </footer>
 
-    </div>
+    </main>
 
 
     <script src="assets/app.js"></script>
