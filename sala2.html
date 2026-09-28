@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sala 2 — Energia em Fuga</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🟢 SALA 2</h1>
+        <p>BLOQUEIO DE SEGURANÇA: ODS</p>
+    </header>
+
+    <main>
+
+        <div class="timer" id="timer">
+            ⏱️ 00:00
+        </div>
+
+        <div class="card">
+
+            <h2>Bloqueio de Segurança Ativado</h2>
+
+            <p>
+                O sistema precisa identificar a sequência correta dos
+                Objetivos de Desenvolvimento Sustentável relacionados
+                à energia, infraestrutura, recursos e clima.
+            </p>
+
+            <div class="room">
+
+                <h3>ODS 7 — Energia Limpa e Acessível</h3>
+
+                <p>
+                    Acesso a energia confiável, sustentável, moderna
+                    e a preço acessível.
+                </p>
+
+                <h3>ODS 9 — Indústria, Inovação e Infraestrutura</h3>
+
+                <p>
+                    Infraestrutura, inovação e sistemas eficientes
+                    e resilientes.
+                </p>
+
+                <h3>ODS 12 — Consumo e Produção Responsáveis</h3>
+
+                <p>
+                    Uso eficiente dos recursos e redução de resíduos.
+                </p>
+
+                <h3>ODS 13 — Ação Contra a Mudança Global do Clima</h3>
+
+                <p>
+                    Ações relacionadas à mudança do clima.
+                </p>
+
+            </div>
+
+            <h2>Encontre o caminho correto</h2>
+
+            <p>
+                Organize os ODS de acordo com a sequência:
+            </p>
+
+            <p>
+                <strong>
+                    ENERGIA → INFRAESTRUTURA → USO DOS RECURSOS → CLIMA
+                </strong>
+            </p>
+
+            <div class="room">
+
+                <label>1º — Energia</label>
+
+                <select id="ods1">
+                    <option value="">Selecione</option>
+                    <option value="7">ODS 7</option>
+                    <option value="9">ODS 9</option>
+                    <option value="12">ODS 12</option>
+                    <option value="13">ODS 13</option>
+                </select>
+
+
+                <label>2º — Infraestrutura</label>
+
+                <select id="ods2">
+                    <option value="">Selecione</option>
+                    <option value="7">ODS 7</option>
+                    <option value="9">ODS 9</option>
+                    <option value="12">ODS 12</option>
+                    <option value="13">ODS 13</option>
+                </select>
+
+
+                <label>3º — Uso dos recursos</label>
+
+                <select id="ods3">
+                    <option value="">Selecione</option>
+                    <option value="7">ODS 7</option>
+                    <option value="9">ODS 9</option>
+                    <option value="12">ODS 12</option>
+                    <option value="13">ODS 13</option>
+                </select>
+
+
+                <label>4º — Clima</label>
+
+                <select id="ods4">
+                    <option value="">Selecione</option>
+                    <option value="7">ODS 7</option>
+                    <option value="9">ODS 9</option>
+                    <option value="12">ODS 12</option>
+                    <option value="13">ODS 13</option>
+                </select>
+
+            </div>
+
+            <button onclick="verificarSala2()">
+                VERIFICAR
+            </button>
+
+            <div id="feedback2" class="feedback hidden"></div>
+
+            <div id="codigo2" class="hidden">
+
+                <p>
+                    🔓 Bloqueio de segurança liberado!
+                </p>
+
+                <p>
+                    Código da Sala 2:
+                </p>
+
+                <span class="code">B1</span>
+
+                <br><br>
+
+                <button onclick="irParaSala3()">
+                    SEGUIR PARA SALA 3
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        Energia em Fuga — Escape Room
+    </footer>
+
+    <script src="assets/app.js"></script>
+
+</body>
+
+</html>
