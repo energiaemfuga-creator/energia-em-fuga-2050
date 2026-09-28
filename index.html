@@ -9,171 +9,217 @@
 
     <title>Energia em Fuga</title>
 
+    <!-- Fonte futurista -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="assets/style.css">
 
 </head>
 
 
-<body class="pagina-inicial">
+<body>
 
-    <main class="tela-inicial">
+    <div class="pagina">
 
-        <!-- CABEÇALHO DO SISTEMA -->
+        <!-- CABEÇALHO -->
 
-        <div class="barra-superior">
+        <header class="topo">
 
-            <div class="identidade-sistema">
+            <div class="logo">
 
-                <span class="icone-energia">⚡</span>
+                <span class="logo-raio">⚡</span>
 
                 <span>ENERGIA EM FUGA</span>
 
             </div>
 
+            <div class="status">
 
-            <div class="status-sistema">
-
-                <span class="ponto-status"></span>
+                <span class="bolinha"></span>
 
                 SISTEMA ONLINE
 
             </div>
 
-        </div>
+        </header>
 
 
-        <!-- PAINEL PRINCIPAL -->
+        <!-- CONTEÚDO PRINCIPAL -->
 
-        <section class="painel-emergencia">
+        <main class="conteudo">
 
-            <div class="alerta">
+            <!-- TÍTULO -->
 
-                <span class="alerta-icone">⚠</span>
+            <section class="titulo">
 
-                <span>ALERTA DE EMERGÊNCIA</span>
+                <p class="codigo-missao">
+                    PROTOCOLO 2050
+                </p>
 
-            </div>
+                <h1>
+                    ENERGIA<br>
+                    <span>EM FUGA</span>
+                </h1>
+
+                <p class="subtitulo">
+                    MISSÃO DE RECUPERAÇÃO ENERGÉTICA
+                </p>
+
+            </section>
 
 
-            <h1>
+            <!-- IMAGEM -->
 
-                SISTEMA<br>
+            <section class="imagem-container">
 
-                <span>EM EMERGÊNCIA</span>
+                <img
+                    src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80"
+                    alt="Rede elétrica e energia"
+                >
 
-            </h1>
+                <div class="imagem-overlay"></div>
+
+                <div class="imagem-legenda">
+
+                    <span>⚡</span>
+
+                    REDE ENERGÉTICA
+
+                </div>
+
+            </section>
 
 
-            <div class="linha-diagnostico"></div>
+            <!-- ALERTA -->
+
+            <section class="alerta">
+
+                <div class="alerta-topo">
+
+                    <span class="alerta-icone">⚠</span>
+
+                    <span>ALERTA DE SISTEMA</span>
+
+                    <span class="alerta-codigo">
+                        ER-001
+                    </span>
+
+                </div>
 
 
-            <p class="mensagem-principal">
+                <h2>
+                    SISTEMA EM EMERGÊNCIA
+                </h2>
 
-                A rede energética foi comprometida.
 
-                <br>
+                <p>
+                    A rede energética foi comprometida.
+                    Sua equipe precisa completar os desafios
+                    e restaurar o sistema antes que o tempo se esgote.
+                </p>
 
-                Sua equipe foi convocada para restaurar
-
-                o sistema antes que o tempo se esgote.
-
-            </p>
+            </section>
 
 
             <!-- IDENTIFICAÇÃO -->
 
-            <div class="identificacao">
+            <section class="missao">
 
                 <label for="nomeEquipe">
-
                     IDENTIFICAÇÃO DA EQUIPE
-
                 </label>
 
 
-                <div class="campo-equipe">
+                <div class="input-container">
 
                     <span>◉</span>
 
                     <input
-
                         type="text"
-
                         id="nomeEquipe"
-
                         placeholder="Digite o nome da equipe"
-
                         autocomplete="off"
-
                     >
 
                 </div>
 
-            </div>
 
+                <button
+                    class="botao"
+                    onclick="iniciarMissao()"
+                >
 
-            <!-- BOTÃO -->
+                    <span>⚡ INICIAR MISSÃO</span>
 
-            <button
+                    <span class="seta">→</span>
 
-                class="botao-missao"
+                </button>
 
-                onclick="iniciarMissao()"
-
-            >
-
-                <span>INICIAR MISSÃO</span>
-
-                <span class="seta">→</span>
-
-            </button>
+            </section>
 
 
             <!-- STATUS -->
 
-            <div class="painel-status">
+            <section class="status-rede">
 
-                <div class="status-titulo">
+                <div class="status-linha">
 
-                    <span>STATUS DO SISTEMA</span>
+                    <span>
+                        INTEGRIDADE DA REDE
+                    </span>
 
-                    <span>CRÍTICO</span>
+                    <strong>
+                        04%
+                    </strong>
 
                 </div>
 
 
-                <div class="barra-progresso">
+                <div class="barra">
 
                     <div class="progresso"></div>
 
                 </div>
 
 
-                <div class="status-informacoes">
+                <div class="status-linha inferior">
 
-                    <span>INTEGRIDADE DA REDE</span>
+                    <span>
+                        STATUS
+                    </span>
 
-                    <span>04%</span>
+                    <strong>
+                        CRÍTICO
+                    </strong>
 
                 </div>
 
-            </div>
+            </section>
 
-
-        </section>
+        </main>
 
 
         <!-- RODAPÉ -->
 
-        <footer class="rodape-inicial">
+        <footer>
 
-            <span>PROTOCOLO DE RECUPERAÇÃO ENERGÉTICA</span>
+            <span>
+                ENERGIA EM FUGA — ESCAPE ROOM
+            </span>
 
-            <span>v1.0</span>
+            <span>
+                v1.0
+            </span>
 
         </footer>
 
-    </main>
+    </div>
 
 
     <script src="assets/app.js"></script>
