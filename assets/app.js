@@ -103,36 +103,68 @@ function irParaSala2() {
 
 }
 
-
 // ===============================
 // SALA 2
 // ===============================
 
 function verificarSala2() {
 
-    const respostas = [
-        document.getElementById("ods1").value,
-        document.getElementById("ods2").value,
-        document.getElementById("ods3").value,
-        document.getElementById("ods4").value
+    // -------------------------------
+    // ETAPA 1 — IDENTIFICAR OS ODS
+    // -------------------------------
+
+    const respostasPistas = [
+        document.getElementById("pistaA").value,
+        document.getElementById("pistaB").value,
+        document.getElementById("pistaC").value,
+        document.getElementById("pistaD").value,
+        document.getElementById("pistaE").value,
+        document.getElementById("pistaF").value
     ];
 
-    const respostaCorreta = [
+    const respostaPistasCorreta = [
+        "7",
+        "9",
+        "12",
+        "13",
+        "4",
+        "14"
+    ];
+
+
+    // -------------------------------
+    // ETAPA 3 — SEQUÊNCIA
+    // -------------------------------
+
+    const ordem = [
+        document.getElementById("ordem1").value,
+        document.getElementById("ordem2").value,
+        document.getElementById("ordem3").value,
+        document.getElementById("ordem4").value
+    ];
+
+    const ordemCorreta = [
         "7",
         "9",
         "12",
         "13"
     ];
 
+
     const feedback = document.getElementById("feedback2");
     const codigo = document.getElementById("codigo2");
 
-    for (let i = 0; i < respostas.length; i++) {
 
-        if (respostas[i] === "") {
+    // -------------------------------
+    // VERIFICAR CAMPOS VAZIOS
+    // -------------------------------
+
+    for (let i = 0; i < respostasPistas.length; i++) {
+
+        if (respostasPistas[i] === "") {
 
             feedback.textContent =
-                "⚠️ Complete todas as respostas antes de verificar.";
+                "⚠️ Complete a Etapa 1 antes de verificar.";
 
             feedback.className = "feedback error";
 
@@ -140,36 +172,146 @@ function verificarSala2() {
         }
     }
 
-    let acertou = true;
 
-    for (let i = 0; i < respostas.length; i++) {
+    for (let i = 0; i < ordem.length; i++) {
 
-        if (respostas[i] !== respostaCorreta[i]) {
-            acertou = false;
+        if (ordem[i] === "") {
+
+            feedback.textContent =
+                "⚠️ Complete a Etapa 3 antes de verificar.";
+
+            feedback.className = "feedback error";
+
+            return;
         }
     }
 
-    if (acertou === true) {
+
+    // -------------------------------
+    // VERIFICAR ETAPA 1
+    // -------------------------------
+
+    let pistasCorretas = true;
+
+    for (let i = 0; i < respostasPistas.length; i++) {
+
+        if (respostasPistas[i] !== respostaPistasCorreta[i]) {
+
+            pistasCorretas = false;
+        }
+    }
+
+
+    if (pistasCorretas === false) {
 
         feedback.textContent =
-            "✅ CORRETO! O bloqueio de segurança foi liberado.";
-
-        feedback.className = "feedback success";
-
-        codigo.classList.remove("hidden");
-
-        localStorage.setItem("sala2Concluida", "true");
-        localStorage.setItem("codigoSala2", "B1");
-
-    } else {
-
-        feedback.textContent =
-            "❌ Sequência incorreta. Analise novamente os ODS e tente novamente.";
+            "❌ Há pelo menos uma associação incorreta. Revise as pistas e tente novamente.";
 
         feedback.className = "feedback error";
 
         codigo.classList.add("hidden");
+
+        return;
     }
+
+
+    // -------------------------------
+    // VERIFICAR ETAPA 2
+    // -------------------------------
+
+    const selecionados = [
+
+        document.getElementById("ods7").checked,
+        document.getElementById("ods9").checked,
+        document.getElementById("ods12").checked,
+        document.getElementById("ods13").checked,
+        document.getElementById("ods4").checked,
+        document.getElementById("ods14").checked
+
+    ];
+
+
+    const quantidadeSelecionada =
+        selecionados.filter(Boolean).length;
+
+
+    if (quantidadeSelecionada !== 4) {
+
+        feedback.textContent =
+            "❌ Você precisa selecionar exatamente quatro ODS.";
+
+        feedback.className = "feedback error";
+
+        codigo.classList.add("hidden");
+
+        return;
+    }
+
+
+    const selecaoCorreta =
+        document.getElementById("ods7").checked &&
+        document.getElementById("ods9").checked &&
+        document.getElementById("ods12").checked &&
+        document.getElementById("ods13").checked &&
+        !document.getElementById("ods4").checked &&
+        !document.getElementById("ods14").checked;
+
+
+    if (selecaoCorreta === false) {
+
+        feedback.textContent =
+            "❌ Os quatro ODS selecionados não correspondem ao protocolo energético.";
+
+        feedback.className = "feedback error";
+
+        codigo.classList.add("hidden");
+
+        return;
+    }
+
+
+    // -------------------------------
+    // VERIFICAR ETAPA 3
+    // -------------------------------
+
+    let sequenciaCorreta = true;
+
+    for (let i = 0; i < ordem.length; i++) {
+
+        if (ordem[i] !== ordemCorreta[i]) {
+
+            sequenciaCorreta = false;
+        }
+    }
+
+
+    if (sequenciaCorreta === false) {
+
+        feedback.textContent =
+            "❌ A sequência está incorreta. Releia a lógica do protocolo.";
+
+        feedback.className = "feedback error";
+
+        codigo.classList.add("hidden");
+
+        return;
+    }
+
+
+    // -------------------------------
+    // TUDO CORRETO
+    // -------------------------------
+
+    feedback.textContent =
+        "✅ CORRETO! As três etapas foram concluídas.";
+
+    feedback.className = "feedback success";
+
+    codigo.classList.remove("hidden");
+
+    localStorage.setItem("sala2Concluida", "true");
+    localStorage.setItem("codigoSala2", "B1");
+
 }
 
 
