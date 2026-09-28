@@ -1,10 +1,12 @@
 /* =====================================================
    ENERGIA EM FUGA
-   TELA INICIAL
+   ESTILO ESCAPE ROOM EDUCATIVO
    ===================================================== */
 
 
-/* RESET */
+/* -----------------------------------------------------
+   RESET
+   ----------------------------------------------------- */
 
 * {
     box-sizing: border-box;
@@ -13,138 +15,111 @@
 }
 
 
-/* =====================================================
-   CONFIGURAÇÕES
-   ===================================================== */
+/* -----------------------------------------------------
+   CORES
+   ----------------------------------------------------- */
 
 :root {
 
-    --preto: #050708;
+    --creme: #fff8e9;
 
-    --preto2: #0b1013;
+    --creme-2: #fff1d2;
 
-    --cinza: #172126;
+    --azul: #2474b8;
 
-    --borda: #293940;
+    --azul-escuro: #174d82;
 
-    --branco: #f4f7f8;
+    --azul-claro: #7bc8e8;
 
-    --cinza-texto: #a4b1b6;
+    --laranja: #f28b38;
 
-    --azul: #20c7f3;
+    --amarelo: #ffd34d;
 
-    --azul-escuro: #08708d;
+    --rosa: #ed6571;
 
-    --vermelho: #ff4655;
+    --verde: #65b879;
 
-    --amarelo: #ffc857;
+    --branco: #ffffff;
+
+    --texto: #24415a;
 
 }
 
 
-/* =====================================================
+/* -----------------------------------------------------
    BODY
-   ===================================================== */
+   ----------------------------------------------------- */
 
 body {
 
     min-height: 100vh;
 
+    font-family:
+        "Nunito",
+        Arial,
+        sans-serif;
+
+    color: var(--texto);
+
     background:
 
         radial-gradient(
-            circle at 50% 10%,
-            #132b34 0%,
-            #081216 35%,
-            #050708 75%
+            circle at 15% 15%,
+            #ffffff 0,
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff8e9 0%,
+            #fff4d9 45%,
+            #e9f5f8 100%
         );
 
-    color: var(--branco);
-
-    font-family: "Inter", Arial, sans-serif;
+    overflow-x: hidden;
 
 }
 
 
-/* =====================================================
+/* -----------------------------------------------------
    PÁGINA
-   ===================================================== */
+   ----------------------------------------------------- */
 
-.pagina {
+.inicio {
 
-    width: 100%;
+    position: relative;
+
+    min-height: 100vh;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 20px 30px 25px;
+
+}
+
+
+/* -----------------------------------------------------
+   CABEÇALHO
+   ----------------------------------------------------- */
+
+.cabecalho {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
 
     max-width: 1050px;
 
     margin: auto;
 
-    padding: 20px;
-
 }
 
 
-/* =====================================================
-   TOPO
-   ===================================================== */
-
-.topo {
-
-    height: 60px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    border-bottom: 1px solid var(--borda);
-
-    margin-bottom: 45px;
-
-}
-
-
-.logo {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    font-family: "Orbitron", sans-serif;
-
-    font-size: 0.85rem;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-}
-
-
-.logo-raio {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    width: 30px;
-
-    height: 30px;
-
-    background: var(--azul);
-
-    color: #001017;
-
-    border-radius: 6px;
-
-}
-
-
-.status {
+.mini-logo {
 
     display: flex;
 
@@ -152,430 +127,717 @@ body {
 
     gap: 8px;
 
-    color: #64dcae;
+    color: var(--azul-escuro);
+
+    font-weight: 800;
+
+    font-size: 0.9rem;
+
+    letter-spacing: 1px;
+
+}
+
+
+.mini-logo span {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 35px;
+
+    height: 35px;
+
+    background: var(--amarelo);
+
+    border-radius: 50%;
+
+    font-size: 1.1rem;
+
+}
+
+
+.missao {
+
+    padding: 8px 16px;
+
+    border-radius: 30px;
+
+    background: var(--branco);
+
+    color: var(--azul);
+
+    box-shadow: 0 5px 15px rgba(36, 116, 184, 0.1);
 
     font-size: 0.7rem;
 
-    font-weight: 700;
+    font-weight: 800;
 
     letter-spacing: 1.5px;
 
 }
 
 
-.bolinha {
+/* -----------------------------------------------------
+   HERO
+   ----------------------------------------------------- */
 
-    width: 8px;
+.hero {
 
-    height: 8px;
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.95fr;
+
+    align-items: center;
+
+    gap: 35px;
+
+    max-width: 1050px;
+
+    margin: 35px auto 0;
+
+}
+
+
+/* -----------------------------------------------------
+   ILUSTRAÇÃO
+   ----------------------------------------------------- */
+
+.ilustracao {
+
+    position: relative;
+
+    height: 570px;
+
+    overflow: hidden;
+
+    border-radius: 40px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #bde9f5 0%,
+            #dff5f5 48%,
+            #fbd39c 100%
+        );
+
+    box-shadow:
+
+        0 20px 50px
+        rgba(36, 116, 184, 0.15);
+
+}
+
+
+/* -----------------------------------------------------
+   SOL
+   ----------------------------------------------------- */
+
+.sol-central {
+
+    position: absolute;
+
+    top: 70px;
+
+    right: 85px;
+
+    width: 105px;
+
+    height: 105px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
 
     border-radius: 50%;
 
-    background: #46dc9e;
+    background: var(--amarelo);
 
-    box-shadow: 0 0 12px #46dc9e;
+    font-size: 4rem;
 
-}
+    box-shadow:
 
+        0 10px 35px
+        rgba(242, 139, 56, 0.35);
 
-/* =====================================================
-   CONTEÚDO
-   ===================================================== */
-
-.conteudo {
-
-    max-width: 820px;
-
-    margin: auto;
+    animation: pulsar 3s infinite ease-in-out;
 
 }
 
 
-/* =====================================================
+/* -----------------------------------------------------
+   NUVENS
+   ----------------------------------------------------- */
+
+.nuvem {
+
+    position: absolute;
+
+    width: 100px;
+
+    height: 35px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.85);
+
+}
+
+
+.nuvem::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 45px;
+
+    height: 45px;
+
+    left: 18px;
+
+    bottom: 10px;
+
+    border-radius: 50%;
+
+    background: white;
+
+}
+
+
+.nuvem::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 38px;
+
+    height: 38px;
+
+    left: 48px;
+
+    bottom: 10px;
+
+    border-radius: 50%;
+
+    background: white;
+
+}
+
+
+.nuvem-1 {
+
+    top: 105px;
+
+    left: 65px;
+
+}
+
+
+.nuvem-2 {
+
+    top: 175px;
+
+    right: 55px;
+
+    transform: scale(0.7);
+
+}
+
+
+/* -----------------------------------------------------
+   TORRES DE ENERGIA
+   ----------------------------------------------------- */
+
+.torre {
+
+    position: absolute;
+
+    bottom: 115px;
+
+    width: 65px;
+
+    height: 230px;
+
+}
+
+
+.torre-1 {
+
+    left: 95px;
+
+}
+
+
+.torre-2 {
+
+    right: 110px;
+
+}
+
+
+.torre::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 29px;
+
+    top: 10px;
+
+    width: 5px;
+
+    height: 210px;
+
+    background: var(--azul-escuro);
+
+    transform: skew(-5deg);
+
+}
+
+
+.torre-topo {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 8px;
+
+    width: 50px;
+
+    height: 35px;
+
+    border-top: 5px solid var(--azul-escuro);
+
+}
+
+
+.torre-linha {
+
+    position: absolute;
+
+    left: 5px;
+
+    width: 55px;
+
+    height: 3px;
+
+    background: var(--azul-escuro);
+
+    transform: rotate(0deg);
+
+}
+
+
+.torre-linha:nth-child(2) {
+
+    top: 55px;
+
+}
+
+
+.torre-linha:nth-child(3) {
+
+    top: 105px;
+
+}
+
+
+.torre-linha:nth-child(4) {
+
+    top: 155px;
+
+}
+
+
+/* -----------------------------------------------------
+   TURBINAS
+   ----------------------------------------------------- */
+
+.turbina {
+
+    position: absolute;
+
+    bottom: 100px;
+
+}
+
+
+.turbina-1 {
+
+    left: 245px;
+
+}
+
+
+.turbina-2 {
+
+    left: 360px;
+
+    transform: scale(0.8);
+
+}
+
+
+.mastro {
+
+    width: 7px;
+
+    height: 155px;
+
+    margin-left: 3px;
+
+    background: var(--azul-escuro);
+
+}
+
+
+.helice {
+
+    position: absolute;
+
+    top: -25px;
+
+    left: -15px;
+
+    width: 38px;
+
+    height: 38px;
+
+    border: 5px solid var(--azul-escuro);
+
+    border-radius: 50%;
+
+}
+
+
+.helice::before,
+
+.helice::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 50px;
+
+    height: 5px;
+
+    top: 12px;
+
+    left: -12px;
+
+    background: var(--azul-escuro);
+
+}
+
+
+.helice::after {
+
+    transform: rotate(90deg);
+
+}
+
+
+/* -----------------------------------------------------
+   CHÃO
+   ----------------------------------------------------- */
+
+.chao {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: -10%;
+
+    width: 120%;
+
+    height: 135px;
+
+    background: var(--verde);
+
+    border-radius: 50% 50% 0 0;
+
+}
+
+
+/* -----------------------------------------------------
+   ENERGIA FLUTUANTE
+   ----------------------------------------------------- */
+
+.energia {
+
+    position: absolute;
+
+    color: var(--laranja);
+
+    font-size: 2rem;
+
+    animation: flutuar 3s infinite ease-in-out;
+
+}
+
+
+.energia-1 {
+
+    top: 220px;
+
+    left: 185px;
+
+}
+
+
+.energia-2 {
+
+    top: 280px;
+
+    right: 85px;
+
+    animation-delay: 1s;
+
+}
+
+
+.energia-3 {
+
+    top: 80px;
+
+    left: 300px;
+
+    color: var(--rosa);
+
+    animation-delay: 0.5s;
+
+}
+
+
+/* -----------------------------------------------------
+   CARTÃO
+   ----------------------------------------------------- */
+
+.cartao {
+
+    position: relative;
+
+    z-index: 5;
+
+    padding: 42px;
+
+    border-radius: 35px;
+
+    background: var(--branco);
+
+    box-shadow:
+
+        0 25px 60px
+        rgba(36, 116, 184, 0.16);
+
+}
+
+
+/* -----------------------------------------------------
+   ETIQUETA
+   ----------------------------------------------------- */
+
+.etiqueta {
+
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    background: #fff0df;
+
+    color: var(--laranja);
+
+    font-size: 0.68rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* -----------------------------------------------------
    TÍTULO
-   ===================================================== */
+   ----------------------------------------------------- */
 
-.titulo {
+.cartao h1 {
 
-    text-align: center;
+    margin-top: 20px;
 
-    margin-bottom: 30px;
+    color: var(--azul-escuro);
 
-}
+    font-family: "Baloo 2", sans-serif;
 
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
 
-.codigo-missao {
-
-    color: var(--azul);
-
-    font-family: "Orbitron", sans-serif;
-
-    font-size: 0.65rem;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 15px;
-
-}
-
-
-.titulo h1 {
-
-    font-family: "Orbitron", sans-serif;
-
-    font-size: clamp(3rem, 8vw, 6rem);
-
-    line-height: 0.9;
-
-    letter-spacing: -3px;
+    line-height: 0.82;
 
     font-weight: 800;
 
 }
 
 
-.titulo h1 span {
+.cartao h1 span {
 
-    color: var(--azul);
-
-    text-shadow:
-
-        0 0 30px
-        rgba(32, 199, 243, 0.25);
+    color: var(--laranja);
 
 }
 
+
+/* -----------------------------------------------------
+   SUBTÍTULO
+   ----------------------------------------------------- */
 
 .subtitulo {
 
-    margin-top: 20px;
-
-    color: var(--cinza-texto);
-
-    font-size: 0.7rem;
-
-    letter-spacing: 4px;
-
-}
-
-
-/* =====================================================
-   IMAGEM
-   ===================================================== */
-
-.imagem-container {
-
-    position: relative;
-
-    height: 310px;
-
-    overflow: hidden;
-
-    border: 1px solid var(--borda);
-
-    margin-bottom: 30px;
-
-    background: #080d10;
-
-}
-
-
-.imagem-container img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    filter:
-
-        saturate(0.8)
-
-        brightness(0.55);
-
-    transition: transform 0.5s ease;
-
-}
-
-
-.imagem-container:hover img {
-
-    transform: scale(1.03);
-
-}
-
-
-/* camada escura */
-
-.imagem-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.1),
-            rgba(0,0,0,0.7)
-        );
-
-}
-
-
-/* linhas decorativas */
-
-.imagem-container::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 12px;
-
-    border: 1px solid
-        rgba(255,255,255,0.12);
-
-    z-index: 2;
-
-    pointer-events: none;
-
-}
-
-
-/* legenda */
-
-.imagem-legenda {
-
-    position: absolute;
-
-    left: 25px;
-
-    bottom: 22px;
-
-    z-index: 3;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    font-family: "Orbitron", sans-serif;
-
-    font-size: 0.65rem;
-
-    letter-spacing: 2px;
-
-    color: white;
-
-}
-
-
-.imagem-legenda span {
+    margin-top: 22px;
 
     color: var(--azul);
 
-    font-size: 1.2rem;
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    line-height: 1.6;
 
 }
 
 
-/* =====================================================
-   ALERTA
-   ===================================================== */
+/* -----------------------------------------------------
+   LINHA
+   ----------------------------------------------------- */
 
-.alerta {
+.linha {
 
-    border: 1px solid
-        rgba(255, 70, 85, 0.35);
+    width: 70px;
+
+    height: 6px;
+
+    margin: 25px 0;
+
+    border-radius: 10px;
 
     background:
 
         linear-gradient(
-            135deg,
-            rgba(255,70,85,0.08),
-            rgba(255,70,85,0.02)
+            90deg,
+            var(--amarelo),
+            var(--laranja),
+            var(--rosa)
         );
 
-    padding: 28px;
-
-    margin-bottom: 30px;
-
 }
 
 
-.alerta-topo {
+/* -----------------------------------------------------
+   DESCRIÇÃO
+   ----------------------------------------------------- */
 
-    display: flex;
+.descricao {
 
-    align-items: center;
-
-    gap: 10px;
-
-    margin-bottom: 18px;
-
-    color: var(--vermelho);
-
-    font-family: "Orbitron", sans-serif;
-
-    font-size: 0.65rem;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-}
-
-
-.alerta-codigo {
-
-    margin-left: auto;
-
-    color: #765057;
-
-}
-
-
-.alerta h2 {
-
-    font-family: "Orbitron", sans-serif;
-
-    font-size: clamp(1.3rem, 4vw, 2rem);
-
-    letter-spacing: 1px;
-
-    margin-bottom: 12px;
-
-}
-
-
-.alerta p {
-
-    max-width: 680px;
-
-    color: var(--cinza-texto);
-
-    line-height: 1.7;
+    color: #637987;
 
     font-size: 0.95rem;
 
-}
-
-
-/* =====================================================
-   MISSÃO
-   ===================================================== */
-
-.missao {
-
-    padding: 30px;
-
-    border: 1px solid var(--borda);
-
-    background: rgba(10,18,22,0.8);
-
-    margin-bottom: 25px;
+    line-height: 1.7;
 
 }
 
 
-.missao label {
+/* -----------------------------------------------------
+   EQUIPE
+   ----------------------------------------------------- */
+
+.equipe {
+
+    margin-top: 28px;
+
+}
+
+
+.equipe label {
 
     display: block;
 
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 
-    color: var(--cinza-texto);
+    color: var(--azul-escuro);
 
-    font-family: "Orbitron", sans-serif;
+    font-size: 0.7rem;
 
-    font-size: 0.65rem;
-
-    letter-spacing: 2px;
+    font-weight: 800;
 
 }
 
 
-/* =====================================================
-   INPUT
-   ===================================================== */
+.equipe input {
 
-.input-container {
+    width: 100%;
 
-    display: flex;
+    padding: 15px 18px;
 
-    align-items: center;
+    border: 2px solid #dce9ed;
 
-    gap: 12px;
+    border-radius: 15px;
 
-    border: 1px solid var(--borda);
+    outline: none;
 
-    background: #05090b;
+    background: #f8fbfc;
 
-    padding-left: 15px;
+    color: var(--texto);
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 0.95rem;
 
     transition: 0.2s;
 
 }
 
 
-.input-container span {
-
-    color: var(--azul);
-
-}
-
-
-.input-container:focus-within {
+.equipe input:focus {
 
     border-color: var(--azul);
 
+    background: white;
+
     box-shadow:
 
-        0 0 20px
-        rgba(32,199,243,0.08);
+        0 5px 20px
+        rgba(36, 116, 184, 0.1);
 
 }
 
 
-.input-container input {
+.equipe input::placeholder {
 
-    width: 100%;
-
-    border: none;
-
-    outline: none;
-
-    background: transparent;
-
-    color: white;
-
-    padding: 17px 15px 17px 0;
-
-    font-family: "Inter", sans-serif;
-
-    font-size: 1rem;
+    color: #a6b8c0;
 
 }
 
 
-.input-container input::placeholder {
-
-    color: #52636a;
-
-}
-
-
-/* =====================================================
+/* -----------------------------------------------------
    BOTÃO
-   ===================================================== */
+   ----------------------------------------------------- */
 
-.botao {
+.botao-iniciar {
 
     width: 100%;
 
@@ -587,298 +849,409 @@ body {
 
     margin-top: 14px;
 
-    padding: 18px 22px;
+    padding: 17px 21px;
 
-    border: 1px solid var(--azul);
+    border: none;
+
+    border-radius: 15px;
 
     background:
 
         linear-gradient(
             135deg,
-            #0c657e,
-            #073847
+            var(--laranja),
+            var(--rosa)
         );
 
     color: white;
 
+    font-family: "Baloo 2", sans-serif;
+
+    font-size: 1rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
     cursor: pointer;
-
-    font-family: "Orbitron", sans-serif;
-
-    font-size: 0.75rem;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-    transition: all 0.2s ease;
-
-}
-
-
-.botao:hover {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #1184a3,
-            #075166
-        );
 
     box-shadow:
 
-        0 10px 30px
-        rgba(32,199,243,0.15);
-
-    transform: translateY(-2px);
-
-}
-
-
-.botao:active {
-
-    transform: translateY(0);
-
-}
-
-
-.seta {
-
-    font-size: 1.4rem;
+        0 8px 20px
+        rgba(237, 101, 113, 0.25);
 
     transition: 0.2s;
 
 }
 
 
-.botao:hover .seta {
+.botao-iniciar strong {
 
-    transform: translateX(6px);
-
-}
-
-
-/* =====================================================
-   STATUS DA REDE
-   ===================================================== */
-
-.status-rede {
-
-    padding: 20px 0 5px;
+    font-size: 1.5rem;
 
 }
 
 
-.status-linha {
+.botao-iniciar:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+
+        0 12px 25px
+        rgba(237, 101, 113, 0.35);
+
+}
+
+
+.botao-iniciar:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* -----------------------------------------------------
+   RODAPÉ DO CARTÃO
+   ----------------------------------------------------- */
+
+.rodape-cartao {
 
     display: flex;
 
     justify-content: space-between;
 
-    align-items: center;
+    gap: 8px;
 
-    color: #71858d;
-
-    font-family: "Orbitron", sans-serif;
-
-    font-size: 0.6rem;
-
-    letter-spacing: 1.5px;
-
-}
-
-
-.status-linha strong {
-
-    color: var(--amarelo);
-
-}
-
-
-.status-linha strong {
-
-    color: var(--vermelho);
-
-}
-
-
-.barra {
-
-    width: 100%;
-
-    height: 6px;
-
-    margin: 10px 0;
-
-    background: #111b20;
-
-    overflow: hidden;
-
-}
-
-
-.progresso {
-
-    width: 4%;
-
-    height: 100%;
-
-    background:
-
-        linear-gradient(
-            to right,
-            var(--vermelho),
-            var(--amarelo)
-        );
-
-}
-
-
-.inferior strong {
-
-    color: var(--vermelho);
-
-}
-
-
-/* =====================================================
-   RODAPÉ
-   ===================================================== */
-
-footer {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    max-width: 820px;
-
-    margin: 35px auto 0;
+    margin-top: 25px;
 
     padding-top: 18px;
 
-    border-top: 1px solid var(--borda);
+    border-top: 1px solid #edf1f2;
 
-    color: #50636b;
-
-    font-family: "Orbitron", sans-serif;
+    color: #8ba0aa;
 
     font-size: 0.55rem;
 
-    letter-spacing: 1.5px;
+    font-weight: 800;
 
 }
 
 
-/* =====================================================
-   RESPONSIVO
-   ===================================================== */
+/* -----------------------------------------------------
+   DECORAÇÕES
+   ----------------------------------------------------- */
 
-@media (max-width: 700px) {
+.decoracao {
 
-    .pagina {
+    position: absolute;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+}
+
+
+.estrela {
+
+    color: var(--amarelo);
+
+    font-size: 2rem;
+
+    animation: flutuar 4s infinite ease-in-out;
+
+}
+
+
+.estrela-1 {
+
+    top: 160px;
+
+    left: 4%;
+
+}
+
+
+.estrela-2 {
+
+    right: 5%;
+
+    bottom: 170px;
+
+    color: var(--rosa);
+
+    animation-delay: 1s;
+
+}
+
+
+.raio {
+
+    color: var(--laranja);
+
+    font-size: 1.5rem;
+
+    animation: flutuar 3s infinite ease-in-out;
+
+}
+
+
+.raio-1 {
+
+    top: 300px;
+
+    left: 2%;
+
+}
+
+
+.raio-2 {
+
+    right: 2%;
+
+    top: 250px;
+
+    animation-delay: 1.5s;
+
+}
+
+
+.sol {
+
+    right: 4%;
+
+    top: 100px;
+
+    color: var(--amarelo);
+
+    font-size: 3rem;
+
+    opacity: 0.5;
+
+    animation: girar 12s linear infinite;
+
+}
+
+
+/* -----------------------------------------------------
+   RODAPÉ
+   ----------------------------------------------------- */
+
+footer {
+
+    max-width: 1050px;
+
+    margin: 25px auto 0;
+
+    text-align: center;
+
+    color: #8aa0a9;
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* -----------------------------------------------------
+   ANIMAÇÕES
+   ----------------------------------------------------- */
+
+@keyframes pulsar {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.06);
+
+    }
+
+}
+
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-10px);
+
+    }
+
+}
+
+
+@keyframes girar {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+/* -----------------------------------------------------
+   CELULAR
+   ----------------------------------------------------- */
+
+@media (max-width: 850px) {
+
+    .inicio {
 
         padding: 15px;
 
     }
 
 
-    .topo {
+    .hero {
 
-        margin-bottom: 30px;
+        grid-template-columns: 1fr;
 
-    }
-
-
-    .status {
-
-        font-size: 0.55rem;
+        max-width: 600px;
 
     }
 
 
-    .logo {
+    .ilustracao {
 
-        font-size: 0.65rem;
+        height: 350px;
 
-    }
-
-
-    .titulo h1 {
-
-        font-size: 3.2rem;
+        order: 1;
 
     }
 
 
-    .subtitulo {
+    .cartao {
 
-        font-size: 0.55rem;
+        order: 2;
 
-        letter-spacing: 2px;
-
-    }
-
-
-    .imagem-container {
-
-        height: 230px;
+        padding: 30px;
 
     }
 
 
-    .alerta {
+    .cartao h1 {
 
-        padding: 22px;
+        font-size: 4rem;
 
     }
 
 
-    .missao {
+    .torre {
 
-        padding: 22px;
+        transform: scale(0.7);
+
+        transform-origin: bottom;
+
+    }
+
+
+    .turbina-2 {
+
+        display: none;
 
     }
 
 }
 
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
 
-    .topo {
+    .cabecalho {
 
-        align-items: flex-start;
-
-    }
-
-
-    .status {
-
-        display: none;
+        padding: 0 5px;
 
     }
 
 
-    .titulo h1 {
+    .mini-logo {
 
-        font-size: 2.7rem;
-
-    }
-
-
-    .imagem-container {
-
-        height: 200px;
+        font-size: 0.7rem;
 
     }
 
 
-    footer {
+    .missao {
+
+        font-size: 0.55rem;
+
+    }
+
+
+    .hero {
+
+        margin-top: 25px;
+
+    }
+
+
+    .ilustracao {
+
+        height: 280px;
+
+        border-radius: 25px;
+
+    }
+
+
+    .cartao {
+
+        padding: 25px 20px;
+
+        border-radius: 25px;
+
+    }
+
+
+    .cartao h1 {
+
+        font-size: 3.3rem;
+
+    }
+
+
+    .rodape-cartao {
 
         flex-direction: column;
 
-        gap: 8px;
+    }
+
+
+    .sol-central {
+
+        width: 75px;
+
+        height: 75px;
+
+        font-size: 2.5rem;
+
+        right: 40px;
+
+        top: 40px;
 
     }
 
