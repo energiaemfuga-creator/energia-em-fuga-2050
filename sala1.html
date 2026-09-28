@@ -18,9 +18,14 @@
     </header>
 
     <main>
+
+        <div class="timer" id="timer">
+            ⏱️ 00:00
+        </div>
+
         <div class="card">
 
-            <h2>O sistema entrou em colapso.</h2>
+            <h2>O sistema energético entrou em colapso.</h2>
 
             <p>
                 Sua equipe precisa identificar quais fontes de energia
@@ -28,11 +33,92 @@
             </p>
 
             <p>
-                O desafio será liberado em breve.
+                Para cada fonte, selecione:
+                <strong>R</strong> para renovável ou
+                <strong>N</strong> para não renovável.
             </p>
 
+            <div class="room">
+
+                <label>☀️ Solar</label>
+                <select id="fonte1">
+                    <option value="">Selecione</option>
+                    <option value="R">R — Renovável</option>
+                    <option value="N">N — Não renovável</option>
+                </select>
+
+                <label>🌬️ Eólica</label>
+                <select id="fonte2">
+                    <option value="">Selecione</option>
+                    <option value="R">R — Renovável</option>
+                    <option value="N">N — Não renovável</option>
+                </select>
+
+                <label>💧 Hidráulica</label>
+                <select id="fonte3">
+                    <option value="">Selecione</option>
+                    <option value="R">R — Renovável</option>
+                    <option value="N">N — Não renovável</option>
+                </select>
+
+                <label>🌱 Biomassa</label>
+                <select id="fonte4">
+                    <option value="">Selecione</option>
+                    <option value="R">R — Renovável</option>
+                    <option value="N">N — Não renovável</option>
+                </select>
+
+                <label>🔥 Gás natural</label>
+                <select id="fonte5">
+                    <option value="">Selecione</option>
+                    <option value="R">R — Renovável</option>
+                    <option value="N">N — Não renovável</option>
+                </select>
+
+                <label>🪨 Carvão</label>
+                <select id="fonte6">
+                    <option value="">Selecione</option>
+                    <option value="R">R — Renovável</option>
+                    <option value="N">N — Não renovável</option>
+                </select>
+
+            </div>
+
+            <button onclick="verificarSala1()">
+                VERIFICAR
+            </button>
+
+            <div id="feedback" class="feedback hidden"></div>
+
+            <div id="codigo" class="hidden">
+
+                <p>
+                    🔓 Desafio concluído!
+                </p>
+
+                <p>
+                    Código da Sala 1:
+                </p>
+
+                <span class="code">07</span>
+
+                <br><br>
+
+                <button onclick="irParaSala2()">
+                    SEGUIR PARA SALA 2
+                </button>
+
+            </div>
+
         </div>
+
     </main>
+
+    <footer>
+        Energia em Fuga — Escape Room
+    </footer>
+
+    <script src="assets/app.js"></script>
 
 </body>
 
