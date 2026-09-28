@@ -1,5 +1,13 @@
+// INICIAR MISSÃO
 function iniciarMissao() {
-    const nomeEquipe = document.getElementById("nomeEquipe").value.trim();
+
+    const campoEquipe = document.getElementById("nomeEquipe");
+
+    if (!campoEquipe) {
+        return;
+    }
+
+    const nomeEquipe = campoEquipe.value.trim();
 
     if (nomeEquipe === "") {
         alert("Digite o nome da equipe para iniciar a missão.");
@@ -10,10 +18,13 @@ function iniciarMissao() {
     localStorage.setItem("inicioMissao", Date.now());
 
     window.location.href = "sala1.html";
-} 
+}
+
+
+// VERIFICAR SALA 1
 function verificarSala1() {
 
-    const resposta = [
+    const respostas = [
         document.getElementById("fonte1").value,
         document.getElementById("fonte2").value,
         document.getElementById("fonte3").value,
@@ -22,24 +33,48 @@ function verificarSala1() {
         document.getElementById("fonte6").value
     ];
 
-    const correta = ["R", "R", "R", "R", "N", "N"];
+    const respostaCorreta = [
+        "R",
+        "R",
+        "R",
+        "R",
+        "N",
+        "N"
+    ];
 
     const feedback = document.getElementById("feedback");
     const codigo = document.getElementById("codigo");
 
-    if (resposta.includes("")) {
-        feedback.textContent = "⚠️ Complete todas as respostas antes de verificar.";
-        feedback.className = "feedback error";
-        return;
+    // Verifica se todas as respostas foram preenchidas
+    for (let i = 0; i < respostas.length; i++) {
+
+        if (respostas[i] === "") {
+
+            feedback.textContent =
+                "⚠️ Complete todas as respostas antes de verificar.";
+
+            feedback.className = "feedback error";
+
+            return;
+        }
     }
 
-    const acertou = resposta.every(
-        (valor, indice) => valor === correta[indice]
-    );
+    // Verifica as respostas
+    let acertou = true;
 
-    if (acertou) {
+    for (let i = 0; i < respostas.length; i++) {
 
-        feedback.textContent = "✅ Resposta correta! O sistema liberou o código da Sala 1.";
+        if (respostas[i] !== respostaCorreta[i]) {
+            acertou = false;
+        }
+    }
+
+    // Se acertou
+    if (acertou === true) {
+
+        feedback.textContent =
+            "✅ CORRETO! O código da Sala 1 foi liberado.";
+
         feedback.className = "feedback success";
 
         codigo.classList.remove("hidden");
@@ -47,9 +82,14 @@ function verificarSala1() {
         localStorage.setItem("sala1Concluida", "true");
         localStorage.setItem("codigoSala1", "07");
 
-    } else {
+    }
 
-        feedback.textContent = "❌ Há respostas incorretas. Tente novamente.";
+    // Se errou
+    else {
+
+        feedback.textContent =
+            "❌ Resposta incorreta. Revise as fontes e tente novamente.";
+
         feedback.className = "feedback error";
 
         codigo.classList.add("hidden");
@@ -57,7 +97,9 @@ function verificarSala1() {
 }
 
 
+// IR PARA SALA 2
 function irParaSala2() {
+
     window.location.href = "sala2.html";
+
 }
-console.log("APP.JS DA ENERGIA EM FUGA FOI CARREGADO");
