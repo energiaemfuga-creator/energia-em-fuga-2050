@@ -1,6 +1,10 @@
-/* =========================================
-   ENERGIA EM FUGA — ESTILO PRINCIPAL
-   ========================================= */
+/* =====================================================
+   ENERGIA EM FUGA
+   TELA INICIAL
+   ===================================================== */
+
+
+/* RESET */
 
 * {
     box-sizing: border-box;
@@ -8,466 +12,874 @@
     padding: 0;
 }
 
+
+/* =====================================================
+   CONFIGURAÇÕES
+   ===================================================== */
+
 :root {
-    --fundo: #07131c;
-    --fundo-card: #0d202c;
-    --fundo-card-2: #102936;
-    --borda: #1d4354;
-    --texto: #e8f1f5;
-    --texto-secundario: #9fb5bf;
-    --azul: #28a9d6;
-    --azul-escuro: #0b4d68;
-    --verde: #31c48d;
-    --amarelo: #f5c451;
-    --vermelho: #ef6262;
-    --branco: #ffffff;
+
+    --preto: #050708;
+
+    --preto2: #0b1013;
+
+    --cinza: #172126;
+
+    --borda: #293940;
+
+    --branco: #f4f7f8;
+
+    --cinza-texto: #a4b1b6;
+
+    --azul: #20c7f3;
+
+    --azul-escuro: #08708d;
+
+    --vermelho: #ff4655;
+
+    --amarelo: #ffc857;
+
 }
+
+
+/* =====================================================
+   BODY
+   ===================================================== */
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background:
-        radial-gradient(circle at top, #123342 0%, #07131c 45%, #040b10 100%);
-    color: var(--texto);
+
     min-height: 100vh;
-    line-height: 1.6;
-}
 
+    background:
 
-/* =========================================
-   CABEÇALHO
-   ========================================= */
+        radial-gradient(
+            circle at 50% 10%,
+            #132b34 0%,
+            #081216 35%,
+            #050708 75%
+        );
 
-header {
-    background: rgba(5, 18, 27, 0.94);
-    border-bottom: 1px solid var(--borda);
-    padding: 28px 20px;
-    text-align: center;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35);
-}
-
-header h1 {
-    font-size: 2rem;
-    letter-spacing: 2px;
     color: var(--branco);
-    margin-bottom: 6px;
-}
 
-header p {
-    color: var(--azul);
-    font-size: 0.95rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-family: "Inter", Arial, sans-serif;
+
 }
 
 
-/* =========================================
-   ÁREA PRINCIPAL
-   ========================================= */
+/* =====================================================
+   PÁGINA
+   ===================================================== */
 
-main {
+.pagina {
+
     width: 100%;
+
     max-width: 1050px;
-    margin: 0 auto;
-    padding: 35px 20px 50px;
-}
 
+    margin: auto;
 
-/* =========================================
-   CARD PRINCIPAL
-   ========================================= */
-
-.card {
-    background:
-        linear-gradient(
-            145deg,
-            rgba(16, 41, 54, 0.98),
-            rgba(8, 25, 35, 0.98)
-        );
-
-    border: 1px solid var(--borda);
-    border-radius: 18px;
-
-    padding: 35px;
-
-    box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.03);
-
-    max-width: 850px;
-    margin: 0 auto;
-}
-
-
-/* =========================================
-   TÍTULOS
-   ========================================= */
-
-.card h2 {
-    color: var(--branco);
-    font-size: 1.35rem;
-    margin-bottom: 18px;
-    border-left: 4px solid var(--azul);
-    padding-left: 12px;
-}
-
-.card h3 {
-    color: var(--azul);
-    font-size: 1rem;
-    margin-bottom: 8px;
-    margin-top: 22px;
-    letter-spacing: 0.5px;
-}
-
-
-/* =========================================
-   TEXTOS
-   ========================================= */
-
-.card p {
-    color: var(--texto-secundario);
-    margin-bottom: 18px;
-    line-height: 1.7;
-}
-
-.card strong {
-    color: var(--branco);
-}
-
-
-/* =========================================
-   TIMER
-   ========================================= */
-
-.timer {
-    width: fit-content;
-    min-width: 190px;
-
-    margin: 0 auto 25px;
-
-    padding: 12px 24px;
-
-    background: #050e14;
-
-    border: 1px solid var(--vermelho);
-    border-radius: 10px;
-
-    color: var(--vermelho);
-
-    text-align: center;
-
-    font-size: 1.45rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-
-    box-shadow:
-        0 0 15px rgba(239, 98, 98, 0.12);
+    padding: 20px;
 
 }
 
 
-/* =========================================
-   BLOCOS DOS DESAFIOS
-   ========================================= */
+/* =====================================================
+   TOPO
+   ===================================================== */
 
-.room {
-    background: rgba(4, 15, 22, 0.65);
+.topo {
 
-    border: 1px solid var(--borda);
-    border-left: 4px solid var(--azul);
+    height: 60px;
 
-    border-radius: 12px;
+    display: flex;
 
-    padding: 22px;
+    align-items: center;
 
-    margin: 22px 0 28px;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--borda);
+
+    margin-bottom: 45px;
+
 }
 
 
-/* =========================================
-   LABELS
-   ========================================= */
+.logo {
 
-label {
-    display: block;
+    display: flex;
 
-    color: var(--texto);
+    align-items: center;
 
-    font-weight: bold;
+    gap: 10px;
 
-    margin-bottom: 8px;
-    margin-top: 16px;
-}
-
-
-/* =========================================
-   CAMPOS
-   ========================================= */
-
-input,
-select {
-    width: 100%;
-
-    padding: 13px 14px;
-
-    background: #081923;
-
-    color: var(--texto);
-
-    border: 1px solid #285263;
-    border-radius: 8px;
-
-    font-size: 1rem;
-
-    outline: none;
-
-    transition:
-        border-color 0.2s,
-        box-shadow 0.2s;
-}
-
-input::placeholder {
-    color: #718792;
-}
-
-input:focus,
-select:focus {
-    border-color: var(--azul);
-
-    box-shadow:
-        0 0 0 3px rgba(40, 169, 214, 0.12);
-}
-
-select {
-    margin-bottom: 12px;
-}
-
-option {
-    background: #0b202b;
-    color: white;
-}
-
-
-/* =========================================
-   CHECKBOXES
-   ========================================= */
-
-input[type="checkbox"] {
-    width: auto;
-
-    margin-right: 10px;
-
-    accent-color: var(--verde);
-
-    transform: scale(1.15);
-}
-
-label:has(input[type="checkbox"]) {
-    background: rgba(13, 32, 44, 0.8);
-
-    border: 1px solid var(--borda);
-
-    border-radius: 8px;
-
-    padding: 13px;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-label:has(input[type="checkbox"]):hover {
-    border-color: var(--azul);
-    background: rgba(19, 51, 66, 0.9);
-}
-
-
-/* =========================================
-   BOTÕES
-   ========================================= */
-
-button {
-    width: 100%;
-
-    padding: 14px 20px;
-
-    margin-top: 10px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #147da3,
-            #0b5674
-        );
-
-    color: white;
-
-    border: 1px solid #2ca9d2;
-
-    border-radius: 9px;
-
-    font-size: 1rem;
-    font-weight: bold;
-
-    letter-spacing: 1px;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.15s,
-        box-shadow 0.15s,
-        background 0.15s;
-}
-
-button:hover {
-    background:
-        linear-gradient(
-            135deg,
-            #1994bd,
-            #0d6688
-        );
-
-    box-shadow:
-        0 5px 20px rgba(40, 169, 214, 0.2);
-
-    transform: translateY(-1px);
-}
-
-button:active {
-    transform: translateY(1px);
-}
-
-
-/* =========================================
-   FEEDBACK
-   ========================================= */
-
-.feedback {
-    margin-top: 22px;
-
-    padding: 15px 18px;
-
-    border-radius: 9px;
-
-    font-weight: bold;
-
-    border: 1px solid transparent;
-}
-
-.success {
-    background: rgba(49, 196, 141, 0.12);
-
-    color: #69e0ae;
-
-    border-color: rgba(49, 196, 141, 0.35);
-}
-
-.error {
-    background: rgba(239, 98, 98, 0.12);
-
-    color: #ff8585;
-
-    border-color: rgba(239, 98, 98, 0.35);
-}
-
-
-/* =========================================
-   CÓDIGO LIBERADO
-   ========================================= */
-
-.code {
-    display: inline-block;
-
-    margin-top: 8px;
-
-    padding: 12px 25px;
-
-    background: #07151d;
-
-    color: var(--amarelo);
-
-    border: 2px solid var(--amarelo);
-
-    border-radius: 10px;
-
-    font-size: 1.7rem;
-
-    font-weight: bold;
-
-    letter-spacing: 5px;
-
-    box-shadow:
-        0 0 18px rgba(245, 196, 81, 0.12);
-}
-
-
-/* =========================================
-   ELEMENTOS OCULTOS
-   ========================================= */
-
-.hidden {
-    display: none;
-}
-
-
-/* =========================================
-   RODAPÉ
-   ========================================= */
-
-footer {
-    text-align: center;
-
-    padding: 25px 20px 35px;
-
-    color: #607985;
+    font-family: "Orbitron", sans-serif;
 
     font-size: 0.85rem;
 
-    border-top: 1px solid rgba(29, 67, 84, 0.4);
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
 }
 
 
-/* =========================================
-   TELA PEQUENA / CELULAR
-   ========================================= */
+.logo-raio {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 30px;
+
+    height: 30px;
+
+    background: var(--azul);
+
+    color: #001017;
+
+    border-radius: 6px;
+
+}
+
+
+.status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #64dcae;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.bolinha {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #46dc9e;
+
+    box-shadow: 0 0 12px #46dc9e;
+
+}
+
+
+/* =====================================================
+   CONTEÚDO
+   ===================================================== */
+
+.conteudo {
+
+    max-width: 820px;
+
+    margin: auto;
+
+}
+
+
+/* =====================================================
+   TÍTULO
+   ===================================================== */
+
+.titulo {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.codigo-missao {
+
+    color: var(--azul);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.titulo h1 {
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: clamp(3rem, 8vw, 6rem);
+
+    line-height: 0.9;
+
+    letter-spacing: -3px;
+
+    font-weight: 800;
+
+}
+
+
+.titulo h1 span {
+
+    color: var(--azul);
+
+    text-shadow:
+
+        0 0 30px
+        rgba(32, 199, 243, 0.25);
+
+}
+
+
+.subtitulo {
+
+    margin-top: 20px;
+
+    color: var(--cinza-texto);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 4px;
+
+}
+
+
+/* =====================================================
+   IMAGEM
+   ===================================================== */
+
+.imagem-container {
+
+    position: relative;
+
+    height: 310px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--borda);
+
+    margin-bottom: 30px;
+
+    background: #080d10;
+
+}
+
+
+.imagem-container img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter:
+
+        saturate(0.8)
+
+        brightness(0.55);
+
+    transition: transform 0.5s ease;
+
+}
+
+
+.imagem-container:hover img {
+
+    transform: scale(1.03);
+
+}
+
+
+/* camada escura */
+
+.imagem-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.1),
+            rgba(0,0,0,0.7)
+        );
+
+}
+
+
+/* linhas decorativas */
+
+.imagem-container::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px solid
+        rgba(255,255,255,0.12);
+
+    z-index: 2;
+
+    pointer-events: none;
+
+}
+
+
+/* legenda */
+
+.imagem-legenda {
+
+    position: absolute;
+
+    left: 25px;
+
+    bottom: 22px;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 2px;
+
+    color: white;
+
+}
+
+
+.imagem-legenda span {
+
+    color: var(--azul);
+
+    font-size: 1.2rem;
+
+}
+
+
+/* =====================================================
+   ALERTA
+   ===================================================== */
+
+.alerta {
+
+    border: 1px solid
+        rgba(255, 70, 85, 0.35);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,70,85,0.08),
+            rgba(255,70,85,0.02)
+        );
+
+    padding: 28px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.alerta-topo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    color: var(--vermelho);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.alerta-codigo {
+
+    margin-left: auto;
+
+    color: #765057;
+
+}
+
+
+.alerta h2 {
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: clamp(1.3rem, 4vw, 2rem);
+
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.alerta p {
+
+    max-width: 680px;
+
+    color: var(--cinza-texto);
+
+    line-height: 1.7;
+
+    font-size: 0.95rem;
+
+}
+
+
+/* =====================================================
+   MISSÃO
+   ===================================================== */
+
+.missao {
+
+    padding: 30px;
+
+    border: 1px solid var(--borda);
+
+    background: rgba(10,18,22,0.8);
+
+    margin-bottom: 25px;
+
+}
+
+
+.missao label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--cinza-texto);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =====================================================
+   INPUT
+   ===================================================== */
+
+.input-container {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border: 1px solid var(--borda);
+
+    background: #05090b;
+
+    padding-left: 15px;
+
+    transition: 0.2s;
+
+}
+
+
+.input-container span {
+
+    color: var(--azul);
+
+}
+
+
+.input-container:focus-within {
+
+    border-color: var(--azul);
+
+    box-shadow:
+
+        0 0 20px
+        rgba(32,199,243,0.08);
+
+}
+
+
+.input-container input {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    padding: 17px 15px 17px 0;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 1rem;
+
+}
+
+
+.input-container input::placeholder {
+
+    color: #52636a;
+
+}
+
+
+/* =====================================================
+   BOTÃO
+   ===================================================== */
+
+.botao {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 14px;
+
+    padding: 18px 22px;
+
+    border: 1px solid var(--azul);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #0c657e,
+            #073847
+        );
+
+    color: white;
+
+    cursor: pointer;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    transition: all 0.2s ease;
+
+}
+
+
+.botao:hover {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #1184a3,
+            #075166
+        );
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(32,199,243,0.15);
+
+    transform: translateY(-2px);
+
+}
+
+
+.botao:active {
+
+    transform: translateY(0);
+
+}
+
+
+.seta {
+
+    font-size: 1.4rem;
+
+    transition: 0.2s;
+
+}
+
+
+.botao:hover .seta {
+
+    transform: translateX(6px);
+
+}
+
+
+/* =====================================================
+   STATUS DA REDE
+   ===================================================== */
+
+.status-rede {
+
+    padding: 20px 0 5px;
+
+}
+
+
+.status-linha {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: #71858d;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.status-linha strong {
+
+    color: var(--amarelo);
+
+}
+
+
+.status-linha strong {
+
+    color: var(--vermelho);
+
+}
+
+
+.barra {
+
+    width: 100%;
+
+    height: 6px;
+
+    margin: 10px 0;
+
+    background: #111b20;
+
+    overflow: hidden;
+
+}
+
+
+.progresso {
+
+    width: 4%;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+            to right,
+            var(--vermelho),
+            var(--amarelo)
+        );
+
+}
+
+
+.inferior strong {
+
+    color: var(--vermelho);
+
+}
+
+
+/* =====================================================
+   RODAPÉ
+   ===================================================== */
+
+footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    max-width: 820px;
+
+    margin: 35px auto 0;
+
+    padding-top: 18px;
+
+    border-top: 1px solid var(--borda);
+
+    color: #50636b;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVO
+   ===================================================== */
 
 @media (max-width: 700px) {
 
-    header {
-        padding: 22px 15px;
+    .pagina {
+
+        padding: 15px;
+
     }
 
-    header h1 {
-        font-size: 1.55rem;
+
+    .topo {
+
+        margin-bottom: 30px;
+
     }
 
-    header p {
-        font-size: 0.8rem;
+
+    .status {
+
+        font-size: 0.55rem;
+
     }
 
-    main {
-        padding: 22px 12px 35px;
+
+    .logo {
+
+        font-size: 0.65rem;
+
     }
 
-    .card {
-        padding: 22px 17px;
-        border-radius: 13px;
+
+    .titulo h1 {
+
+        font-size: 3.2rem;
+
     }
 
-    .card h2 {
-        font-size: 1.15rem;
+
+    .subtitulo {
+
+        font-size: 0.55rem;
+
+        letter-spacing: 2px;
+
     }
 
-    .room {
-        padding: 16px;
+
+    .imagem-container {
+
+        height: 230px;
+
     }
 
-    .timer {
-        font-size: 1.2rem;
-        min-width: 170px;
+
+    .alerta {
+
+        padding: 22px;
+
     }
 
-    button {
-        padding: 14px;
+
+    .missao {
+
+        padding: 22px;
+
     }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .topo {
+
+        align-items: flex-start;
+
+    }
+
+
+    .status {
+
+        display: none;
+
+    }
+
+
+    .titulo h1 {
+
+        font-size: 2.7rem;
+
+    }
+
+
+    .imagem-container {
+
+        height: 200px;
+
+    }
+
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 8px;
+
+    }
+
 }
