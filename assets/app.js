@@ -102,4 +102,82 @@ function irParaSala2() {
 
     window.location.href = "sala2.html";
 
+} 
+// VERIFICAR SALA 2
+function verificarSala2() {
+
+    const respostas = [
+        document.getElementById("ods1").value,
+        document.getElementById("ods2").value,
+        document.getElementById("ods3").value,
+        document.getElementById("ods4").value
+    ];
+
+    const respostaCorreta = [
+        "7",
+        "9",
+        "12",
+        "13"
+    ];
+
+    const feedback = document.getElementById("feedback2");
+    const codigo = document.getElementById("codigo2");
+
+    // Verifica se todas as respostas foram preenchidas
+    for (let i = 0; i < respostas.length; i++) {
+
+        if (respostas[i] === "") {
+
+            feedback.textContent =
+                "⚠️ Complete todas as respostas antes de verificar.";
+
+            feedback.className = "feedback error";
+
+            return;
+        }
+    }
+
+    // Verifica as respostas
+    let acertou = true;
+
+    for (let i = 0; i < respostas.length; i++) {
+
+        if (respostas[i] !== respostaCorreta[i]) {
+            acertou = false;
+        }
+    }
+
+    // Se acertou
+    if (acertou === true) {
+
+        feedback.textContent =
+            "✅ CORRETO! O bloqueio de segurança foi liberado.";
+
+        feedback.className = "feedback success";
+
+        codigo.classList.remove("hidden");
+
+        localStorage.setItem("sala2Concluida", "true");
+        localStorage.setItem("codigoSala2", "B1");
+
+    }
+
+    // Se errou
+    else {
+
+        feedback.textContent =
+            "❌ Sequência incorreta. Analise novamente os ODS e tente novamente.";
+
+        feedback.className = "feedback error";
+
+        codigo.classList.add("hidden");
+    }
+}
+
+
+// IR PARA SALA 3
+function irParaSala3() {
+
+    window.location.href = "sala3.html";
+
 }
