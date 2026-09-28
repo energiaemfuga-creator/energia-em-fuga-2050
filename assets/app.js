@@ -1,4 +1,7 @@
+// ===============================
 // INICIAR MISSÃO
+// ===============================
+
 function iniciarMissao() {
 
     const campoEquipe = document.getElementById("nomeEquipe");
@@ -21,7 +24,10 @@ function iniciarMissao() {
 }
 
 
-// VERIFICAR SALA 1
+// ===============================
+// SALA 1
+// ===============================
+
 function verificarSala1() {
 
     const respostas = [
@@ -45,7 +51,6 @@ function verificarSala1() {
     const feedback = document.getElementById("feedback");
     const codigo = document.getElementById("codigo");
 
-    // Verifica se todas as respostas foram preenchidas
     for (let i = 0; i < respostas.length; i++) {
 
         if (respostas[i] === "") {
@@ -59,7 +64,6 @@ function verificarSala1() {
         }
     }
 
-    // Verifica as respostas
     let acertou = true;
 
     for (let i = 0; i < respostas.length; i++) {
@@ -69,7 +73,6 @@ function verificarSala1() {
         }
     }
 
-    // Se acertou
     if (acertou === true) {
 
         feedback.textContent =
@@ -82,10 +85,7 @@ function verificarSala1() {
         localStorage.setItem("sala1Concluida", "true");
         localStorage.setItem("codigoSala1", "07");
 
-    }
-
-    // Se errou
-    else {
+    } else {
 
         feedback.textContent =
             "❌ Resposta incorreta. Revise as fontes e tente novamente.";
@@ -97,13 +97,17 @@ function verificarSala1() {
 }
 
 
-// IR PARA SALA 2
 function irParaSala2() {
 
     window.location.href = "sala2.html";
 
-} 
-// VERIFICAR SALA 2
+}
+
+
+// ===============================
+// SALA 2
+// ===============================
+
 function verificarSala2() {
 
     const respostas = [
@@ -123,7 +127,6 @@ function verificarSala2() {
     const feedback = document.getElementById("feedback2");
     const codigo = document.getElementById("codigo2");
 
-    // Verifica se todas as respostas foram preenchidas
     for (let i = 0; i < respostas.length; i++) {
 
         if (respostas[i] === "") {
@@ -137,7 +140,6 @@ function verificarSala2() {
         }
     }
 
-    // Verifica as respostas
     let acertou = true;
 
     for (let i = 0; i < respostas.length; i++) {
@@ -147,7 +149,6 @@ function verificarSala2() {
         }
     }
 
-    // Se acertou
     if (acertou === true) {
 
         feedback.textContent =
@@ -160,10 +161,7 @@ function verificarSala2() {
         localStorage.setItem("sala2Concluida", "true");
         localStorage.setItem("codigoSala2", "B1");
 
-    }
-
-    // Se errou
-    else {
+    } else {
 
         feedback.textContent =
             "❌ Sequência incorreta. Analise novamente os ODS e tente novamente.";
@@ -175,7 +173,6 @@ function verificarSala2() {
 }
 
 
-// IR PARA SALA 3
 function irParaSala3() {
 
     window.location.href = "sala3.html";
