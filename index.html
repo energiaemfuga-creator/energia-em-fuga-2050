@@ -4,11 +4,11 @@
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Energia em Fuga</title>
 
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -17,25 +17,33 @@
         rel="stylesheet"
     >
 
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/style.css">
 
 </head>
 
 
-<body>
+<body class="pagina-inicial">
 
     <main class="inicio">
 
-        <!-- ELEMENTOS DECORATIVOS -->
+
+        <!-- =================================================
+             ELEMENTOS DECORATIVOS
+             ================================================= -->
 
         <div class="decoracao estrela estrela-1">✦</div>
+
         <div class="decoracao estrela estrela-2">✦</div>
+
         <div class="decoracao raio raio-1">⚡</div>
+
         <div class="decoracao raio raio-2">⚡</div>
-        <div class="decoracao sol">☀</div>
 
 
-        <!-- CABEÇALHO -->
+        <!-- =================================================
+             CABEÇALHO
+             ================================================= -->
 
         <header class="cabecalho">
 
@@ -47,6 +55,7 @@
 
             </div>
 
+
             <div class="missao">
 
                 MISSÃO 2050
@@ -56,86 +65,84 @@
         </header>
 
 
-        <!-- ÁREA PRINCIPAL -->
+
+        <!-- =================================================
+             ÁREA PRINCIPAL
+             ================================================= -->
 
         <section class="hero">
 
 
-            <!-- ILUSTRAÇÃO -->
+            <!-- =================================================
+                 FOTO + ANIMAÇÕES
+                 ================================================= -->
 
-            <div class="ilustracao">
-
-                <div class="nuvem nuvem-1"></div>
-
-                <div class="nuvem nuvem-2"></div>
+            <div class="imagem-energia">
 
 
-                <div class="sol-central">
+                <!-- Foto real da Unsplash -->
 
-                    ☀️
-
-                </div>
+                <div class="foto-energia"></div>
 
 
-                <div class="torre torre-1">
+                <!-- Camada colorida -->
 
-                    <div class="torre-topo"></div>
-
-                    <div class="torre-linha"></div>
-
-                    <div class="torre-linha"></div>
-
-                    <div class="torre-linha"></div>
-
-                </div>
+                <div class="filtro-foto"></div>
 
 
-                <div class="torre torre-2">
+                <!-- Brilho sobre a imagem -->
 
-                    <div class="torre-topo"></div>
-
-                    <div class="torre-linha"></div>
-
-                    <div class="torre-linha"></div>
-
-                    <div class="torre-linha"></div>
-
-                </div>
+                <div class="brilho-energia"></div>
 
 
-                <div class="turbina turbina-1">
+                <!-- Linha de energia animada -->
 
-                    <div class="helice"></div>
+                <div class="linha-energia"></div>
 
-                    <div class="mastro"></div>
+
+                <!-- Partículas -->
+
+                <div class="particula particula-1">✦</div>
+
+                <div class="particula particula-2">⚡</div>
+
+                <div class="particula particula-3">✦</div>
+
+                <div class="particula particula-4">⚡</div>
+
+                <div class="particula particula-5">✦</div>
+
+
+                <!-- Sol estilizado -->
+
+                <div class="sol-animado">
+
+                    ☀
 
                 </div>
 
 
-                <div class="turbina turbina-2">
+                <!-- Texto sobre a imagem -->
 
-                    <div class="helice"></div>
+                <div class="texto-imagem">
 
-                    <div class="mastro"></div>
+                    <span>ENERGIA</span>
+
+                    <strong>EM MOVIMENTO</strong>
 
                 </div>
 
-
-                <div class="chao"></div>
-
-
-                <div class="energia energia-1">⚡</div>
-
-                <div class="energia energia-2">⚡</div>
-
-                <div class="energia energia-3">✦</div>
 
             </div>
 
 
-            <!-- CARTÃO PRINCIPAL -->
+
+            <!-- =================================================
+                 CARTÃO DA MISSÃO
+                 ================================================= -->
 
             <div class="cartao">
+
 
                 <div class="etiqueta">
 
@@ -176,7 +183,8 @@
                 </p>
 
 
-                <!-- EQUIPE -->
+
+                <!-- Nome da equipe -->
 
                 <div class="equipe">
 
@@ -188,64 +196,87 @@
 
 
                     <input
-
                         type="text"
-
                         id="nomeEquipe"
-
                         placeholder="Digite o nome da equipe..."
-
                         autocomplete="off"
-
                     >
 
                 </div>
 
 
+
+                <!-- Botão -->
+
                 <button
-
                     class="botao-iniciar"
-
                     onclick="iniciarMissao()"
-
                 >
 
-                    <span>COMEÇAR A MISSÃO</span>
+                    <span>
 
-                    <strong>→</strong>
+                        COMEÇAR A MISSÃO
+
+                    </span>
+
+                    <strong>
+
+                        →
+
+                    </strong>
 
                 </button>
 
 
+
+                <!-- Rodapé do cartão -->
+
                 <div class="rodape-cartao">
 
-                    <span>☀️ ENERGIA</span>
+                    <span>
 
-                    <span>🌱 SUSTENTABILIDADE</span>
+                        ☀️ ENERGIA
 
-                    <span>⚡ DESAFIO</span>
+                    </span>
+
+
+                    <span>
+
+                        🌱 SUSTENTABILIDADE
+
+                    </span>
+
+
+                    <span>
+
+                        ⚡ DESAFIO
+
+                    </span>
 
                 </div>
+
 
             </div>
 
         </section>
 
 
-        <!-- RODAPÉ -->
+
+        <!-- =================================================
+             RODAPÉ
+             ================================================= -->
 
         <footer>
 
-            <span>
-
-                ENERGIA EM FUGA — ESCAPE ROOM EDUCATIVO
-
-            </span>
+            ENERGIA EM FUGA — ESCAPE ROOM EDUCATIVO
 
         </footer>
 
+
     </main>
 
+
+    <!-- JavaScript -->
 
     <script src="assets/app.js"></script>
 
