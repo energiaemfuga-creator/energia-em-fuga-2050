@@ -103,17 +103,18 @@ function irParaSala2() {
 
 }
 
+
 // ===============================
 // SALA 2
 // ===============================
 
 function verificarSala2() {
 
-    // -------------------------------
+    // ===============================
     // ETAPA 1 — IDENTIFICAR OS ODS
-    // -------------------------------
+    // ===============================
 
-    const respostasPistas = [
+    const respostas = [
         document.getElementById("pistaA").value,
         document.getElementById("pistaB").value,
         document.getElementById("pistaC").value,
@@ -122,49 +123,29 @@ function verificarSala2() {
         document.getElementById("pistaF").value
     ];
 
-    const respostaPistasCorreta = [
+    const respostasCorretas = [
         "7",
         "9",
         "12",
         "13",
-        "4",
+        "5",
         "14"
     ];
-
-
-    // -------------------------------
-    // ETAPA 3 — SEQUÊNCIA
-    // -------------------------------
-
-    const ordem = [
-        document.getElementById("ordem1").value,
-        document.getElementById("ordem2").value,
-        document.getElementById("ordem3").value,
-        document.getElementById("ordem4").value
-    ];
-
-    const ordemCorreta = [
-        "7",
-        "9",
-        "12",
-        "13"
-    ];
-
 
     const feedback = document.getElementById("feedback2");
     const codigo = document.getElementById("codigo2");
 
 
-    // -------------------------------
+    // ===============================
     // VERIFICAR CAMPOS VAZIOS
-    // -------------------------------
+    // ===============================
 
-    for (let i = 0; i < respostasPistas.length; i++) {
+    for (let i = 0; i < respostas.length; i++) {
 
-        if (respostasPistas[i] === "") {
+        if (respostas[i] === "") {
 
             feedback.textContent =
-                "⚠️ Complete a Etapa 1 antes de verificar.";
+                "⚠️ Complete todas as associações da Etapa 1.";
 
             feedback.className = "feedback error";
 
@@ -173,39 +154,26 @@ function verificarSala2() {
     }
 
 
-    for (let i = 0; i < ordem.length; i++) {
-
-        if (ordem[i] === "") {
-
-            feedback.textContent =
-                "⚠️ Complete a Etapa 3 antes de verificar.";
-
-            feedback.className = "feedback error";
-
-            return;
-        }
-    }
-
-
-    // -------------------------------
+    // ===============================
     // VERIFICAR ETAPA 1
-    // -------------------------------
+    // ===============================
 
-    let pistasCorretas = true;
+    let etapa1Correta = true;
 
-    for (let i = 0; i < respostasPistas.length; i++) {
+    for (let i = 0; i < respostas.length; i++) {
 
-        if (respostasPistas[i] !== respostaPistasCorreta[i]) {
+        if (respostas[i] !== respostasCorretas[i]) {
 
-            pistasCorretas = false;
+            etapa1Correta = false;
+
         }
     }
 
 
-    if (pistasCorretas === false) {
+    if (etapa1Correta === false) {
 
         feedback.textContent =
-            "❌ Há pelo menos uma associação incorreta. Revise as pistas e tente novamente.";
+            "❌ Uma ou mais associações estão incorretas. Analise novamente as pistas.";
 
         feedback.className = "feedback error";
 
@@ -215,30 +183,31 @@ function verificarSala2() {
     }
 
 
-    // -------------------------------
-    // VERIFICAR ETAPA 2
-    // -------------------------------
+    // ===============================
+    // ETAPA 2 — SELECIONAR OS ODS
+    // ===============================
 
-    const selecionados = [
-
-        document.getElementById("ods7").checked,
-        document.getElementById("ods9").checked,
-        document.getElementById("ods12").checked,
-        document.getElementById("ods13").checked,
-        document.getElementById("ods4").checked,
-        document.getElementById("ods14").checked
-
-    ];
+    const ods5 = document.getElementById("ods5").checked;
+    const ods7 = document.getElementById("ods7").checked;
+    const ods9 = document.getElementById("ods9").checked;
+    const ods12 = document.getElementById("ods12").checked;
+    const ods13 = document.getElementById("ods13").checked;
+    const ods14 = document.getElementById("ods14").checked;
 
 
     const quantidadeSelecionada =
-        selecionados.filter(Boolean).length;
+        [ods5, ods7, ods9, ods12, ods13, ods14]
+        .filter(Boolean).length;
 
+
+    // ===============================
+    // VERIFICAR QUANTIDADE
+    // ===============================
 
     if (quantidadeSelecionada !== 4) {
 
         feedback.textContent =
-            "❌ Você precisa selecionar exatamente quatro ODS.";
+            "❌ Selecione exatamente quatro ODS.";
 
         feedback.className = "feedback error";
 
@@ -248,19 +217,23 @@ function verificarSala2() {
     }
 
 
-    const selecaoCorreta =
-        document.getElementById("ods7").checked &&
-        document.getElementById("ods9").checked &&
-        document.getElementById("ods12").checked &&
-        document.getElementById("ods13").checked &&
-        !document.getElementById("ods4").checked &&
-        !document.getElementById("ods14").checked;
+    // ===============================
+    // VERIFICAR SELEÇÃO
+    // ===============================
+
+    const etapa2Correta =
+        ods7 &&
+        ods9 &&
+        ods12 &&
+        ods13 &&
+        !ods5 &&
+        !ods14;
 
 
-    if (selecaoCorreta === false) {
+    if (etapa2Correta === false) {
 
         feedback.textContent =
-            "❌ Os quatro ODS selecionados não correspondem ao protocolo energético.";
+            "❌ A seleção não corresponde ao protocolo energético. Revise os temas indicados.";
 
         feedback.className = "feedback error";
 
@@ -270,40 +243,12 @@ function verificarSala2() {
     }
 
 
-    // -------------------------------
-    // VERIFICAR ETAPA 3
-    // -------------------------------
-
-    let sequenciaCorreta = true;
-
-    for (let i = 0; i < ordem.length; i++) {
-
-        if (ordem[i] !== ordemCorreta[i]) {
-
-            sequenciaCorreta = false;
-        }
-    }
-
-
-    if (sequenciaCorreta === false) {
-
-        feedback.textContent =
-            "❌ A sequência está incorreta. Releia a lógica do protocolo.";
-
-        feedback.className = "feedback error";
-
-        codigo.classList.add("hidden");
-
-        return;
-    }
-
-
-    // -------------------------------
+    // ===============================
     // TUDO CORRETO
-    // -------------------------------
+    // ===============================
 
     feedback.textContent =
-        "✅ CORRETO! As três etapas foram concluídas.";
+        "✅ CORRETO! O protocolo energético foi identificado.";
 
     feedback.className = "feedback success";
 
