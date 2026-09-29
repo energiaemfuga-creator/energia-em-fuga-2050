@@ -18,6 +18,7 @@
 <body>
 
     <header>
+
         <div>
             <strong>🟡 SALA 3</strong>
             <span>LABORATÓRIOS DE ENERGIA</span>
@@ -26,6 +27,7 @@
         <div class="timer" id="timer">
             ⏱️ 00:00
         </div>
+
     </header>
 
 
@@ -41,7 +43,9 @@
             </p>
 
 
+            <!-- ================================= -->
             <!-- LABORATÓRIO SOLAR -->
+            <!-- ================================= -->
 
             <div class="room">
 
@@ -50,10 +54,13 @@
                 <p>
                     A radiação do Sol é captada por um sistema solar.
                     A energia recebida é convertida em eletricidade.
-                    A eletricidade passa pelo inversor e pode ser encaminhada à rede.
+                    A eletricidade passa pelo inversor e pode ser
+                    encaminhada à rede.
                 </p>
 
-                <p><strong>Sequência:</strong></p>
+                <p>
+                    <strong>Sequência:</strong>
+                </p>
 
                 <p>
                     RADIAÇÃO SOLAR →
@@ -62,12 +69,12 @@
                     INVERSOR
                 </p>
 
-                <p><strong>Identificação:</strong> ☀️ SOLAR — Nº 7</p>
-
             </div>
 
 
+            <!-- ================================= -->
             <!-- LABORATÓRIO HIDROGÊNIO -->
+            <!-- ================================= -->
 
             <div class="room">
 
@@ -80,7 +87,9 @@
                     utilizado para fins energéticos.
                 </p>
 
-                <p><strong>Sequência:</strong></p>
+                <p>
+                    <strong>Sequência:</strong>
+                </p>
 
                 <p>
                     ELETRICIDADE →
@@ -90,12 +99,12 @@
                     USO ENERGÉTICO
                 </p>
 
-                <p><strong>Identificação:</strong> 💧 HIDROGÊNIO — Nº 4</p>
-
             </div>
 
 
+            <!-- ================================= -->
             <!-- LABORATÓRIO NUCLEAR -->
+            <!-- ================================= -->
 
             <div class="room">
 
@@ -108,7 +117,9 @@
                     um gerador, produzindo eletricidade.
                 </p>
 
-                <p><strong>Sequência:</strong></p>
+                <p>
+                    <strong>Sequência:</strong>
+                </p>
 
                 <p>
                     FISSÃO NUCLEAR →
@@ -118,12 +129,12 @@
                     ELETRICIDADE
                 </p>
 
-                <p><strong>Identificação:</strong> ☢️ NUCLEAR — Nº 2</p>
-
             </div>
 
 
+            <!-- ================================= -->
             <!-- LABORATÓRIO GEOTÉRMICO -->
+            <!-- ================================= -->
 
             <div class="room">
 
@@ -136,7 +147,9 @@
                     um gerador.
                 </p>
 
-                <p><strong>Sequência:</strong></p>
+                <p>
+                    <strong>Sequência:</strong>
+                </p>
 
                 <p>
                     CALOR DO SUBSOLO →
@@ -145,26 +158,32 @@
                     ELETRICIDADE
                 </p>
 
-                <p><strong>Identificação:</strong> 🌋 GEOTÉRMICA — Nº 3</p>
-
             </div>
 
 
-            <!-- DESAFIO FINAL -->
+            <!-- ================================= -->
+            <!-- DESAFIO DOS LABORATÓRIOS -->
+            <!-- ================================= -->
 
             <div class="room">
 
                 <h2>🔬 DESAFIO — INVESTIGAÇÃO DOS LABORATÓRIOS</h2>
 
                 <p>
-                    Os quatro laboratórios apresentam diferentes processos
-                    de transformação e utilização da energia.
+                    Os quatro laboratórios apresentam diferentes
+                    processos de transformação e utilização da energia.
                 </p>
 
+
+                <!-- ETAPA 1 -->
+
+                <h3>ETAPA 1 — IDENTIFIQUE OS PROCESSOS</h3>
+
                 <p>
-                    <strong>Etapa 1:</strong> Observe as sequências e
-                    selecione todos os laboratórios que apresentam
-                    <strong>ELETRICIDADE como resultado do processo.</strong>
+                    Observe as sequências apresentadas nos quatro
+                    laboratórios e selecione todos aqueles em que
+                    <strong>a eletricidade aparece como resultado
+                    do processo apresentado.</strong>
                 </p>
 
 
@@ -189,10 +208,20 @@
                 </label>
 
 
+                <!-- ETAPA 2 -->
+
+                <h3>ETAPA 2 — ENCONTRE O GERADOR</h3>
+
                 <p>
-                    <strong>Etapa 2:</strong> Entre os laboratórios selecionados,
-                    identifique aqueles em que a eletricidade é produzida
-                    utilizando um <strong>GERADOR</strong>.
+                    Agora observe apenas os laboratórios selecionados
+                    na etapa anterior.
+                </p>
+
+                <p>
+                    <strong>
+                        Quais deles utilizam um gerador para produzir
+                        eletricidade?
+                    </strong>
                 </p>
 
 
@@ -207,20 +236,26 @@
                 </label>
 
 
+                <!-- ETAPA 3 -->
+
+                <h3>ETAPA 3 — DESCUBRA O CÓDIGO</h3>
+
                 <p>
-                    <strong>Etapa 3:</strong> Utilize os números associados
-                    aos dois laboratórios identificados na Etapa 2.
+                    Os laboratórios identificados na etapa anterior
+                    possuem uma identificação numérica no material
+                    físico da missão.
                 </p>
 
                 <p>
-                    ☢️ Nuclear = <strong>2</strong>
-                    &nbsp;&nbsp;&nbsp;
-                    🌋 Geotérmica = <strong>3</strong>
+                    Localize essas identificações no material,
+                    organize os números na ordem dos laboratórios
+                    encontrados e forme o código da Sala 3.
                 </p>
 
-                <p>
-                    <strong>Digite o código encontrado:</strong>
-                </p>
+
+                <label for="codigoResposta3">
+                    <strong>Código encontrado:</strong>
+                </label>
 
                 <input
                     type="text"
@@ -231,17 +266,25 @@
                 >
 
 
+                <!-- VERIFICAR -->
+
                 <button onclick="verificarSala3()">
                     VERIFICAR
                 </button>
 
 
+                <!-- FEEDBACK -->
+
                 <div id="feedback3" class="feedback"></div>
 
 
+                <!-- CÓDIGO LIBERADO -->
+
                 <div id="codigo3" class="code hidden">
 
-                    🔓 CÓDIGO DA SALA 3
+                    <p>
+                        🔓 <strong>CÓDIGO DA SALA 3</strong>
+                    </p>
 
                     <strong>23</strong>
 
