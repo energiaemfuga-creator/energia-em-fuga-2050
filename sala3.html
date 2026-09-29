@@ -17,8 +17,9 @@
 
 <body>
 
-    <header>
+    <!-- CABEÇALHO -->
 
+    <header>
         <div>
             <strong>🟡 SALA 3</strong>
             <span>LABORATÓRIOS DE ENERGIA</span>
@@ -27,9 +28,10 @@
         <div class="timer" id="timer">
             ⏱️ 00:00
         </div>
-
     </header>
 
+
+    <!-- CONTEÚDO PRINCIPAL -->
 
     <main>
 
@@ -38,14 +40,19 @@
             <h1>🧪 LABORATÓRIOS DE ENERGIA</h1>
 
             <p>
-                Analise os diferentes processos de transformação e utilização
-                da energia apresentados nos laboratórios.
+                O sistema de energia está apresentando falhas.
+                Os quatro laboratórios continuam funcionando, mas o
+                sistema central perdeu parte das informações sobre
+                o caminho da energia em cada tecnologia.
+            </p>
+
+            <p>
+                Para restaurar a conexão entre os laboratórios e a rede,
+                analise como a energia é transformada em cada sistema.
             </p>
 
 
-            <!-- ================================= -->
             <!-- LABORATÓRIO SOLAR -->
-            <!-- ================================= -->
 
             <div class="room">
 
@@ -72,17 +79,15 @@
             </div>
 
 
-            <!-- ================================= -->
             <!-- LABORATÓRIO HIDROGÊNIO -->
-            <!-- ================================= -->
 
             <div class="room">
 
                 <h2>💧 LABORATÓRIO HIDROGÊNIO</h2>
 
                 <p>
-                    A eletricidade pode ser utilizada para realizar a
-                    eletrólise da água. Nesse processo, é produzido
+                    A eletricidade pode ser utilizada para realizar
+                    a eletrólise da água. Nesse processo, é produzido
                     hidrogênio, que pode ser armazenado e posteriormente
                     utilizado para fins energéticos.
                 </p>
@@ -102,9 +107,7 @@
             </div>
 
 
-            <!-- ================================= -->
             <!-- LABORATÓRIO NUCLEAR -->
-            <!-- ================================= -->
 
             <div class="room">
 
@@ -132,9 +135,7 @@
             </div>
 
 
-            <!-- ================================= -->
             <!-- LABORATÓRIO GEOTÉRMICO -->
-            <!-- ================================= -->
 
             <div class="room">
 
@@ -161,112 +162,244 @@
             </div>
 
 
-            <!-- ================================= -->
-            <!-- DESAFIO DOS LABORATÓRIOS -->
-            <!-- ================================= -->
+            <!-- ETAPA 1 -->
 
             <div class="room">
 
-                <h2>🔬 DESAFIO — INVESTIGAÇÃO DOS LABORATÓRIOS</h2>
+                <h2>🧩 ETAPA 1 — CLASSIFIQUE OS LABORATÓRIOS</h2>
 
                 <p>
-                    Os quatro laboratórios apresentam diferentes
-                    processos de transformação e utilização da energia.
-                </p>
-
-
-                <!-- ETAPA 1 -->
-
-                <h3>ETAPA 1 — IDENTIFIQUE OS PROCESSOS</h3>
-
-                <p>
-                    Observe as sequências apresentadas nos quatro
-                    laboratórios e selecione todos aqueles em que
-                    <strong>a eletricidade aparece como resultado
-                    do processo apresentado.</strong>
-                </p>
-
-
-                <label>
-                    <input type="checkbox" id="solar">
-                    ☀️ Solar
-                </label>
-
-                <label>
-                    <input type="checkbox" id="hidrogenio">
-                    💧 Hidrogênio
-                </label>
-
-                <label>
-                    <input type="checkbox" id="nuclear">
-                    ☢️ Nuclear
-                </label>
-
-                <label>
-                    <input type="checkbox" id="geotermica">
-                    🌋 Geotérmica
-                </label>
-
-
-                <!-- ETAPA 2 -->
-
-                <h3>ETAPA 2 — ENCONTRE O GERADOR</h3>
-
-                <p>
-                    Agora observe apenas os laboratórios selecionados
-                    na etapa anterior.
+                    Os quatro laboratórios apresentam diferentes formas
+                    de transformação e utilização da energia.
                 </p>
 
                 <p>
                     <strong>
-                        Quais deles utilizam um gerador para produzir
-                        eletricidade?
+                        Analise as informações de cada laboratório e
+                        classifique-o de acordo com sua função no
+                        sistema energético.
                     </strong>
                 </p>
 
 
-                <label>
-                    <input type="checkbox" id="geradorNuclear">
-                    ☢️ Nuclear
+                <div class="challenge-box">
+
+                    <p>
+                        <strong>A — Gera eletricidade diretamente</strong>
+                    </p>
+
+                    <p>
+                        <strong>
+                            B — Utiliza eletricidade para produzir outro
+                            vetor energético
+                        </strong>
+                    </p>
+
+                    <p>
+                        <strong>
+                            C — Não gera nem utiliza eletricidade
+                        </strong>
+                    </p>
+
+                </div>
+
+
+                <!-- SOLAR -->
+
+                <label for="classificacaoSolar">
+                    ☀️ <strong>Solar:</strong>
                 </label>
 
-                <label>
-                    <input type="checkbox" id="geradorGeotermica">
-                    🌋 Geotérmica
+                <select id="classificacaoSolar">
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                    <option value="A">
+                        A — Gera eletricidade diretamente
+                    </option>
+
+                    <option value="B">
+                        B — Utiliza eletricidade para produzir outro vetor energético
+                    </option>
+
+                    <option value="C">
+                        C — Não gera nem utiliza eletricidade
+                    </option>
+
+                </select>
+
+
+                <!-- HIDROGÊNIO -->
+
+                <label for="classificacaoHidrogenio">
+                    💧 <strong>Hidrogênio:</strong>
                 </label>
 
+                <select id="classificacaoHidrogenio">
 
-                <!-- ETAPA 3 -->
+                    <option value="">
+                        Selecione
+                    </option>
 
-                <h3>ETAPA 3 — DESCUBRA O CÓDIGO</h3>
+                    <option value="A">
+                        A — Gera eletricidade diretamente
+                    </option>
+
+                    <option value="B">
+                        B — Utiliza eletricidade para produzir outro vetor energético
+                    </option>
+
+                    <option value="C">
+                        C — Não gera nem utiliza eletricidade
+                    </option>
+
+                </select>
+
+
+                <!-- NUCLEAR -->
+
+                <label for="classificacaoNuclear">
+                    ☢️ <strong>Nuclear:</strong>
+                </label>
+
+                <select id="classificacaoNuclear">
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                    <option value="A">
+                        A — Gera eletricidade diretamente
+                    </option>
+
+                    <option value="B">
+                        B — Utiliza eletricidade para produzir outro vetor energético
+                    </option>
+
+                    <option value="C">
+                        C — Não gera nem utiliza eletricidade
+                    </option>
+
+                </select>
+
+
+                <!-- GEOTÉRMICA -->
+
+                <label for="classificacaoGeotermica">
+                    🌋 <strong>Geotérmica:</strong>
+                </label>
+
+                <select id="classificacaoGeotermica">
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                    <option value="A">
+                        A — Gera eletricidade diretamente
+                    </option>
+
+                    <option value="B">
+                        B — Utiliza eletricidade para produzir outro vetor energético
+                    </option>
+
+                    <option value="C">
+                        C — Não gera nem utiliza eletricidade
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ETAPA 2 -->
+
+            <div class="room">
+
+                <h2>🔎 ETAPA 2 — DIAGNÓSTICO DO SISTEMA</h2>
 
                 <p>
-                    Os laboratórios identificados na etapa anterior
-                    possuem uma identificação numérica no material
-                    físico da missão.
-                </p>
-
-                <p>
-                    Localize essas identificações no material,
-                    organize os números na ordem dos laboratórios
-                    encontrados e forme o código da Sala 3.
+                    Com base na classificação realizada, identifique
+                    qual alternativa descreve corretamente a relação
+                    entre os quatro laboratórios.
                 </p>
 
 
-                <label for="codigoResposta3">
-                    <strong>Código encontrado:</strong>
-                </label>
+                <div class="alternativa">
 
-                <input
-                    type="text"
-                    id="codigoResposta3"
-                    maxlength="2"
-                    placeholder="Digite o código"
-                    autocomplete="off"
-                >
+                    <label>
+                        <input
+                            type="radio"
+                            name="diagnostico"
+                            value="A"
+                        >
+
+                        <strong>A)</strong>
+                        Os quatro laboratórios geram eletricidade
+                        diretamente a partir de suas fontes primárias.
+                    </label>
+
+                </div>
 
 
-                <!-- VERIFICAR -->
+                <div class="alternativa">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="diagnostico"
+                            value="B"
+                        >
+
+                        <strong>B)</strong>
+                        Solar, nuclear e geotérmica podem gerar
+                        eletricidade, enquanto o laboratório de
+                        hidrogênio utiliza eletricidade para produzir
+                        hidrogênio.
+                    </label>
+
+                </div>
+
+
+                <div class="alternativa">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="diagnostico"
+                            value="C"
+                        >
+
+                        <strong>C)</strong>
+                        Solar e hidrogênio geram eletricidade,
+                        enquanto nuclear e geotérmica utilizam
+                        eletricidade como entrada.
+                    </label>
+
+                </div>
+
+
+                <div class="alternativa">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="diagnostico"
+                            value="D"
+                        >
+
+                        <strong>D)</strong>
+                        O laboratório de hidrogênio produz eletricidade
+                        diretamente, enquanto os demais produzem
+                        apenas calor.
+                    </label>
+
+                </div>
+
+
+                <!-- BOTÃO -->
 
                 <button onclick="verificarSala3()">
                     VERIFICAR
@@ -278,13 +411,11 @@
                 <div id="feedback3" class="feedback"></div>
 
 
-                <!-- CÓDIGO LIBERADO -->
+                <!-- CÓDIGO -->
 
                 <div id="codigo3" class="code hidden">
 
-                    <p>
-                        🔓 <strong>CÓDIGO DA SALA 3</strong>
-                    </p>
+                    🔓 CÓDIGO DA SALA 3
 
                     <strong>23</strong>
 
@@ -300,6 +431,8 @@
 
     </main>
 
+
+    <!-- RODAPÉ -->
 
     <footer>
         ENERGIA EM FUGA — ESCAPE ROOM EDUCATIVO
