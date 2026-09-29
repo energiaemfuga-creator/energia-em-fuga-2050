@@ -271,27 +271,41 @@ function irParaSala3() {
 
 function verificarSala3() {
 
-    // -------------------------------
-    // ETAPA 1 — CLASSIFICAÇÃO
-    // -------------------------------
-
-    const solar = document.getElementById("classificacaoSolar").value;
-    const hidrogenio = document.getElementById("classificacaoHidrogenio").value;
-    const nuclear = document.getElementById("classificacaoNuclear").value;
-    const geotermica = document.getElementById("classificacaoGeotermica").value;
+    const solar = document.getElementById("classificacaoSolar");
+    const hidrogenio = document.getElementById("classificacaoHidrogenio");
+    const nuclear = document.getElementById("classificacaoNuclear");
+    const geotermica = document.getElementById("classificacaoGeotermica");
 
     const feedback = document.getElementById("feedback3");
     const codigo = document.getElementById("codigo3");
 
-    // Verifica se todas as classificações foram preenchidas
+    // ===============================
+    // VERIFICAR SE OS ELEMENTOS EXISTEM
+    // ===============================
 
     if (
-        solar === "" ||
-        hidrogenio === "" ||
-        nuclear === "" ||
-        geotermica === ""
+        !solar ||
+        !hidrogenio ||
+        !nuclear ||
+        !geotermica ||
+        !feedback ||
+        !codigo
     ) {
+        alert("Erro: não foi possível localizar os elementos da Sala 3.");
+        return;
+    }
 
+
+    // ===============================
+    // ETAPA 1
+    // ===============================
+
+    if (
+        solar.value === "" ||
+        hidrogenio.value === "" ||
+        nuclear.value === "" ||
+        geotermica.value === ""
+    ) {
         feedback.textContent =
             "⚠️ Complete a classificação dos quatro laboratórios antes de verificar.";
 
@@ -303,13 +317,11 @@ function verificarSala3() {
     }
 
 
-    // Respostas corretas da Etapa 1
-
     const etapa1Correta =
-        solar === "A" &&
-        hidrogenio === "B" &&
-        nuclear === "A" &&
-        geotermica === "A";
+        solar.value === "A" &&
+        hidrogenio.value === "B" &&
+        nuclear.value === "A" &&
+        geotermica.value === "A";
 
 
     if (!etapa1Correta) {
@@ -325,9 +337,9 @@ function verificarSala3() {
     }
 
 
-    // -------------------------------
-    // ETAPA 2 — DIAGNÓSTICO
-    // -------------------------------
+    // ===============================
+    // ETAPA 2
+    // ===============================
 
     const diagnostico =
         document.querySelector('input[name="diagnostico"]:checked');
@@ -346,13 +358,7 @@ function verificarSala3() {
     }
 
 
-    // Resposta correta da Etapa 2
-
-    const etapa2Correta =
-        diagnostico.value === "B";
-
-
-    if (!etapa2Correta) {
+    if (diagnostico.value !== "B") {
 
         feedback.textContent =
             "❌ O diagnóstico ainda não está correto. Revise a relação entre os quatro laboratórios.";
@@ -365,25 +371,19 @@ function verificarSala3() {
     }
 
 
-    // -------------------------------
-    // SALA 3 CONCLUÍDA
-    // -------------------------------
+    // ===============================
+    // TUDO CORRETO
+    // ===============================
 
     feedback.textContent =
-        "✅ CORRETO! Os quatro laboratórios foram analisados e o sistema foi diagnosticado.";
+        "✅ CORRETO! O sistema foi diagnosticado.";
 
     feedback.className = "feedback success";
 
-
-    // Libera o código 23
-
+    // LIBERA O CÓDIGO 23
     codigo.classList.remove("hidden");
 
-
-    // Registra a conclusão da Sala 3
-
     localStorage.setItem("sala3Concluida", "true");
-
     localStorage.setItem("codigoSala3", "23");
 }
 
