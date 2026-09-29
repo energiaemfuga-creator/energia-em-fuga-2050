@@ -62,6 +62,8 @@
                     INVERSOR
                 </p>
 
+                <p><strong>Identificação:</strong> ☀️ SOLAR — Nº 7</p>
+
             </div>
 
 
@@ -87,6 +89,8 @@
                     ARMAZENAMENTO →
                     USO ENERGÉTICO
                 </p>
+
+                <p><strong>Identificação:</strong> 💧 HIDROGÊNIO — Nº 4</p>
 
             </div>
 
@@ -114,6 +118,8 @@
                     ELETRICIDADE
                 </p>
 
+                <p><strong>Identificação:</strong> ☢️ NUCLEAR — Nº 2</p>
+
             </div>
 
 
@@ -139,6 +145,8 @@
                     ELETRICIDADE
                 </p>
 
+                <p><strong>Identificação:</strong> 🌋 GEOTÉRMICA — Nº 3</p>
+
             </div>
 
 
@@ -146,50 +154,81 @@
 
             <div class="room">
 
-                <h2>🔌 DO GERADOR AO CONSUMIDOR</h2>
+                <h2>🔬 DESAFIO — INVESTIGAÇÃO DOS LABORATÓRIOS</h2>
 
                 <p>
-                    Agora você precisa identificar a ordem correta
-                    das etapas que permitem que a eletricidade chegue
-                    até os consumidores.
+                    Os quatro laboratórios apresentam diferentes processos
+                    de transformação e utilização da energia.
+                </p>
+
+                <p>
+                    <strong>Etapa 1:</strong> Observe as sequências e
+                    selecione todos os laboratórios que apresentam
+                    <strong>ELETRICIDADE como resultado do processo.</strong>
                 </p>
 
 
-                <p><strong>A —</strong> Transporte da eletricidade por grandes distâncias.</p>
+                <label>
+                    <input type="checkbox" id="solar">
+                    ☀️ Solar
+                </label>
 
-                <p><strong>B —</strong> Produção ou conversão da energia em eletricidade.</p>
+                <label>
+                    <input type="checkbox" id="hidrogenio">
+                    💧 Hidrogênio
+                </label>
 
-                <p><strong>C —</strong> Entrega da eletricidade aos consumidores.</p>
+                <label>
+                    <input type="checkbox" id="nuclear">
+                    ☢️ Nuclear
+                </label>
 
-
-                <label for="etapa1">1ª etapa:</label>
-
-                <select id="etapa1">
-                    <option value="">Selecione</option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                </select>
-
-
-                <label for="etapa2">2ª etapa:</label>
-
-                <select id="etapa2">
-                    <option value="">Selecione</option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                </select>
+                <label>
+                    <input type="checkbox" id="geotermica">
+                    🌋 Geotérmica
+                </label>
 
 
-                <label for="etapa3">3ª etapa:</label>
+                <p>
+                    <strong>Etapa 2:</strong> Entre os laboratórios selecionados,
+                    identifique aqueles em que a eletricidade é produzida
+                    utilizando um <strong>GERADOR</strong>.
+                </p>
 
-                <select id="etapa3">
-                    <option value="">Selecione</option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                </select>
+
+                <label>
+                    <input type="checkbox" id="geradorNuclear">
+                    ☢️ Nuclear
+                </label>
+
+                <label>
+                    <input type="checkbox" id="geradorGeotermica">
+                    🌋 Geotérmica
+                </label>
+
+
+                <p>
+                    <strong>Etapa 3:</strong> Utilize os números associados
+                    aos dois laboratórios identificados na Etapa 2.
+                </p>
+
+                <p>
+                    ☢️ Nuclear = <strong>2</strong>
+                    &nbsp;&nbsp;&nbsp;
+                    🌋 Geotérmica = <strong>3</strong>
+                </p>
+
+                <p>
+                    <strong>Digite o código encontrado:</strong>
+                </p>
+
+                <input
+                    type="text"
+                    id="codigoResposta3"
+                    maxlength="2"
+                    placeholder="Digite o código"
+                    autocomplete="off"
+                >
 
 
                 <button onclick="verificarSala3()">
