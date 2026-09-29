@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sala 3 — Laboratórios de Energia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <strong>🟡 SALA 3</strong>
+            <span>LABORATÓRIOS DE ENERGIA</span>
+        </div>
+
+        <div class="timer" id="timer">
+            ⏱️ 00:00
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="card">
+
+            <h1>🧪 LABORATÓRIOS DE ENERGIA</h1>
+
+            <p>
+                Analise os diferentes processos de transformação e utilização
+                da energia apresentados nos laboratórios.
+            </p>
+
+
+            <!-- LABORATÓRIO SOLAR -->
+
+            <div class="room">
+
+                <h2>☀️ LABORATÓRIO SOLAR</h2>
+
+                <p>
+                    A radiação do Sol é captada por um sistema solar.
+                    A energia recebida é convertida em eletricidade.
+                    A eletricidade passa pelo inversor e pode ser encaminhada à rede.
+                </p>
+
+                <p><strong>Sequência:</strong></p>
+
+                <p>
+                    RADIAÇÃO SOLAR →
+                    CONVERSÃO →
+                    ELETRICIDADE →
+                    INVERSOR
+                </p>
+
+            </div>
+
+
+            <!-- LABORATÓRIO HIDROGÊNIO -->
+
+            <div class="room">
+
+                <h2>💧 LABORATÓRIO HIDROGÊNIO</h2>
+
+                <p>
+                    A eletricidade pode ser utilizada para realizar a
+                    eletrólise da água. Nesse processo, é produzido
+                    hidrogênio, que pode ser armazenado e posteriormente
+                    utilizado para fins energéticos.
+                </p>
+
+                <p><strong>Sequência:</strong></p>
+
+                <p>
+                    ELETRICIDADE →
+                    ELETRÓLISE →
+                    H₂ →
+                    ARMAZENAMENTO →
+                    USO ENERGÉTICO
+                </p>
+
+            </div>
+
+
+            <!-- LABORATÓRIO NUCLEAR -->
+
+            <div class="room">
+
+                <h2>☢️ LABORATÓRIO NUCLEAR</h2>
+
+                <p>
+                    Na geração nuclear, a fissão nuclear libera energia
+                    na forma de calor. O calor é utilizado para produzir
+                    vapor, que movimenta uma turbina. A turbina aciona
+                    um gerador, produzindo eletricidade.
+                </p>
+
+                <p><strong>Sequência:</strong></p>
+
+                <p>
+                    FISSÃO NUCLEAR →
+                    CALOR →
+                    TURBINA →
+                    GERADOR →
+                    ELETRICIDADE
+                </p>
+
+            </div>
+
+
+            <!-- LABORATÓRIO GEOTÉRMICO -->
+
+            <div class="room">
+
+                <h2>🌋 LABORATÓRIO GEOTÉRMICO</h2>
+
+                <p>
+                    O calor armazenado no subsolo pode ser utilizado
+                    para produzir energia. Esse calor pode alimentar
+                    um sistema que movimenta uma turbina, acionando
+                    um gerador.
+                </p>
+
+                <p><strong>Sequência:</strong></p>
+
+                <p>
+                    CALOR DO SUBSOLO →
+                    TURBINA →
+                    GERADOR →
+                    ELETRICIDADE
+                </p>
+
+            </div>
+
+
+            <!-- DESAFIO FINAL -->
+
+            <div class="room">
+
+                <h2>🔌 DO GERADOR AO CONSUMIDOR</h2>
+
+                <p>
+                    Agora você precisa identificar a ordem correta
+                    das etapas que permitem que a eletricidade chegue
+                    até os consumidores.
+                </p>
+
+
+                <p><strong>A —</strong> Transporte da eletricidade por grandes distâncias.</p>
+
+                <p><strong>B —</strong> Produção ou conversão da energia em eletricidade.</p>
+
+                <p><strong>C —</strong> Entrega da eletricidade aos consumidores.</p>
+
+
+                <label for="etapa1">1ª etapa:</label>
+
+                <select id="etapa1">
+                    <option value="">Selecione</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                </select>
+
+
+                <label for="etapa2">2ª etapa:</label>
+
+                <select id="etapa2">
+                    <option value="">Selecione</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                </select>
+
+
+                <label for="etapa3">3ª etapa:</label>
+
+                <select id="etapa3">
+                    <option value="">Selecione</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                </select>
+
+
+                <button onclick="verificarSala3()">
+                    VERIFICAR
+                </button>
+
+
+                <div id="feedback3" class="feedback"></div>
+
+
+                <div id="codigo3" class="code hidden">
+
+                    🔓 CÓDIGO DA SALA 3
+
+                    <strong>23</strong>
+
+                    <button onclick="irParaSala4()">
+                        SEGUIR PARA SALA 4 →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        ENERGIA EM FUGA — ESCAPE ROOM EDUCATIVO
+    </footer>
+
+
+    <script src="assets/app.js"></script>
+
+</body>
+
+</html>
