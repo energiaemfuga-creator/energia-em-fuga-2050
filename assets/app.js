@@ -264,4 +264,136 @@ function irParaSala3() {
 
     window.location.href = "sala3.html";
 
+} 
+// ===============================
+// SALA 3
+// ===============================
+
+function verificarSala3() {
+
+    // -------------------------------
+    // ETAPA 1 — CLASSIFICAÇÃO
+    // -------------------------------
+
+    const solar = document.getElementById("classificacaoSolar").value;
+    const hidrogenio = document.getElementById("classificacaoHidrogenio").value;
+    const nuclear = document.getElementById("classificacaoNuclear").value;
+    const geotermica = document.getElementById("classificacaoGeotermica").value;
+
+    const feedback = document.getElementById("feedback3");
+    const codigo = document.getElementById("codigo3");
+
+    // Verifica se todas as classificações foram preenchidas
+
+    if (
+        solar === "" ||
+        hidrogenio === "" ||
+        nuclear === "" ||
+        geotermica === ""
+    ) {
+
+        feedback.textContent =
+            "⚠️ Complete a classificação dos quatro laboratórios antes de verificar.";
+
+        feedback.className = "feedback error";
+
+        codigo.classList.add("hidden");
+
+        return;
+    }
+
+
+    // Respostas corretas da Etapa 1
+
+    const etapa1Correta =
+        solar === "A" &&
+        hidrogenio === "B" &&
+        nuclear === "A" &&
+        geotermica === "A";
+
+
+    if (!etapa1Correta) {
+
+        feedback.textContent =
+            "❌ A classificação dos laboratórios ainda não está correta. Analise novamente as informações.";
+
+        feedback.className = "feedback error";
+
+        codigo.classList.add("hidden");
+
+        return;
+    }
+
+
+    // -------------------------------
+    // ETAPA 2 — DIAGNÓSTICO
+    // -------------------------------
+
+    const diagnostico =
+        document.querySelector('input[name="diagnostico"]:checked');
+
+
+    if (!diagnostico) {
+
+        feedback.textContent =
+            "⚠️ Complete a Etapa 2 antes de verificar.";
+
+        feedback.className = "feedback error";
+
+        codigo.classList.add("hidden");
+
+        return;
+    }
+
+
+    // Resposta correta da Etapa 2
+
+    const etapa2Correta =
+        diagnostico.value === "B";
+
+
+    if (!etapa2Correta) {
+
+        feedback.textContent =
+            "❌ O diagnóstico ainda não está correto. Revise a relação entre os quatro laboratórios.";
+
+        feedback.className = "feedback error";
+
+        codigo.classList.add("hidden");
+
+        return;
+    }
+
+
+    // -------------------------------
+    // SALA 3 CONCLUÍDA
+    // -------------------------------
+
+    feedback.textContent =
+        "✅ CORRETO! Os quatro laboratórios foram analisados e o sistema foi diagnosticado.";
+
+    feedback.className = "feedback success";
+
+
+    // Libera o código 23
+
+    codigo.classList.remove("hidden");
+
+
+    // Registra a conclusão da Sala 3
+
+    localStorage.setItem("sala3Concluida", "true");
+
+    localStorage.setItem("codigoSala3", "23");
+}
+
+
+// ===============================
+// IR PARA SALA 4
+// ===============================
+
+function irParaSala4() {
+
+    window.location.href = "sala4.html";
+
 }
