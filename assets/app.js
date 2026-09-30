@@ -397,3 +397,66 @@ function irParaSala4() {
     window.location.href = "sala4.html";
 
 }
+function verificarSala4() {
+
+    const noticiasSelecionadas =
+        document.querySelectorAll('input[name="noticia"]:checked');
+
+    const feedback = document.getElementById("feedback4");
+    const codigo = document.getElementById("codigo4");
+
+    if (!feedback || !codigo) {
+        alert("Erro: não foi possível localizar os elementos da Sala 4.");
+        return;
+    }
+
+    const respostas =
+        Array.from(noticiasSelecionadas).map(
+            noticia => noticia.value
+        );
+
+    if (respostas.length !== 2) {
+
+        feedback.textContent =
+            "⚠️ Selecione exatamente duas notícias.";
+
+        feedback.className = "feedback error";
+
+        codigo.classList.add("hidden");
+
+        return;
+    }
+
+    const correta =
+        respostas.includes("02") &&
+        respostas.includes("04");
+
+    if (!correta) {
+
+        feedback.textContent =
+            "❌ A seleção ainda não está correta. Analise novamente as notícias.";
+
+        feedback.className = "feedback error";
+
+        codigo.classList.add("hidden");
+
+        return;
+    }
+
+    feedback.textContent =
+        "✅ CORRETO! A emergência energética foi analisada.";
+
+    feedback.className = "feedback success";
+
+    codigo.classList.remove("hidden");
+
+    localStorage.setItem("sala4Concluida", "true");
+    localStorage.setItem("codigoSala4", "01");
+}
+
+
+function irParaFinal() {
+
+    window.location.href = "final.html";
+
+}
