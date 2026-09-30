@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema Final — Energia em Fuga</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="assets/style.css">
+
+
+    <style>
+
+        /* ===============================
+           TELA FINAL
+        =============================== */
+
+        body.final-body {
+
+            min-height: 100vh;
+
+            margin: 0;
+
+            background:
+                linear-gradient(
+                    rgba(5, 15, 30, 0.96),
+                    rgba(5, 15, 30, 0.96)
+                );
+
+            overflow-x: hidden;
+
+        }
+
+
+        .final-container {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 30px 20px;
+
+            box-sizing: border-box;
+
+        }
+
+
+        /* ===============================
+           TÍTULO
+        =============================== */
+
+        .final-title {
+
+            text-align: center;
+
+            color: white;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .final-title h1 {
+
+            margin: 0;
+
+            font-family: "Baloo 2", sans-serif;
+
+            font-size: 2.8rem;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .final-title p {
+
+            margin-top: 5px;
+
+            font-family: "Nunito", sans-serif;
+
+            font-size: 1.1rem;
+
+            color: #d9e7f5;
+
+        }
+
+
+        /* ===============================
+           PAINEL DOS CÓDIGOS
+        =============================== */
+
+        .final-panel {
+
+            width: min(700px, 100%);
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            background: rgba(255, 255, 255, 0.08);
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.35);
+
+            backdrop-filter: blur(10px);
+
+            box-sizing: border-box;
+
+        }
+
+
+        .final-panel h2 {
+
+            margin-top: 0;
+
+            text-align: center;
+
+            color: white;
+
+            font-family: "Baloo 2", sans-serif;
+
+            font-size: 1.6rem;
+
+        }
+
+
+        .codes {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+
+            margin-top: 25px;
+
+        }
+
+
+        .code-input {
+
+            text-align: center;
+
+        }
+
+
+        .code-input label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: white;
+
+            font-family: "Nunito", sans-serif;
+
+            font-weight: 800;
+
+        }
+
+
+        .code-input input {
+
+            width: 100%;
+
+            box-sizing: border-box;
+
+            padding: 15px 8px;
+
+            border: 2px solid rgba(255, 255, 255, 0.25);
+
+            border-radius: 14px;
+
+            background: rgba(255, 255, 255, 0.12);
+
+            color: white;
+
+            text-align: center;
+
+            font-family: "Baloo 2", sans-serif;
+
+            font-size: 1.5rem;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            outline: none;
+
+        }
+
+
+        .code-input input:focus {
+
+            border-color: #ffd34d;
+
+            box-shadow:
+                0 0 15px rgba(255, 211, 77, 0.3);
+
+        }
+
+
+        /* ===============================
+           BOTÃO
+        =============================== */
+
+        .restore-button {
+
+            display: block;
+
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 16px;
+
+            border: none;
+
+            border-radius: 16px;
+
+            background: #ffd34d;
+
+            color: #173d68;
+
+            font-family: "Baloo 2", sans-serif;
+
+            font-size: 1.2rem;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: transform 0.2s ease,
+                        box-shadow 0.2s ease;
+
+        }
+
+
+        .restore-button:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 25px rgba(255, 211, 77, 0.3);
+
+        }
+
+
+        /* ===============================
+           FEEDBACK
+        =============================== */
+
+        #feedbackFinal {
+
+            min-height: 30px;
+
+            margin-top: 18px;
+
+            text-align: center;
+
+            font-family: "Nunito", sans-serif;
+
+            font-weight: 800;
+
+        }
+
+
+        .feedback-final-error {
+
+            color: #ff8d8d;
+
+        }
+
+
+        /* ===============================
+           CIDADE
+        =============================== */
+
+        .cidade {
+
+            position: relative;
+
+            width: min(900px, 100%);
+
+            height: 230px;
+
+            margin-top: 35px;
+
+            overflow: hidden;
+
+            border-radius: 25px;
+
+            background:
+
+                linear-gradient(
+                    to bottom,
+                    #071326 0%,
+                    #0b1d36 65%,
+                    #101010 65%,
+                    #101010 100%
+                );
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.5);
+
+        }
+
+
+        /* lua */
+
+        .lua {
+
+            position: absolute;
+
+            top: 25px;
+
+            right: 60px;
+
+            width: 48px;
+
+            height: 48px;
+
+            border-radius: 50%;
+
+            background: #e9f1ff;
+
+            box-shadow:
+                0 0 20px rgba(233, 241, 255, 0.4);
+
+        }
+
+
+        /* estrelas */
+
+        .estrela {
+
+            position: absolute;
+
+            width: 3px;
+
+            height: 3px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            opacity: 0.7;
+
+        }
+
+
+        .estrela1 {
+            top: 30px;
+            left: 15%;
+        }
+
+        .estrela2 {
+            top: 65px;
+            left: 28%;
+        }
+
+        .estrela3 {
+            top: 40px;
+            left: 45%;
+        }
+
+        .estrela4 {
+            top: 85px;
+            left: 65%;
+        }
+
+        .estrela5 {
+            top: 50px;
+            left: 78%;
+        }
+
+
+        /* prédios */
+
+        .predio {
+
+            position: absolute;
+
+            bottom: 38px;
+
+            background: #121212;
+
+            border-radius: 4px 4px 0 0;
+
+        }
+
+
+        .predio1 {
+
+            left: 4%;
+
+            width: 90px;
+
+            height: 110px;
+
+        }
+
+
+        .predio2 {
+
+            left: 18%;
+
+            width: 120px;
+
+            height: 150px;
+
+        }
+
+
+        .predio3 {
+
+            left: 37%;
+
+            width: 85px;
+
+            height: 125px;
+
+        }
+
+
+        .predio4 {
+
+            left: 52%;
+
+            width: 125px;
+
+            height: 165px;
+
+        }
+
+
+        .predio5 {
+
+            left: 72%;
+
+            width: 95px;
+
+            height: 130px;
+
+        }
+
+
+        .predio6 {
+
+            left: 87%;
+
+            width: 70px;
+
+            height: 100px;
+
+        }
+
+
+        /* janelas */
+
+        .janela {
+
+            position: absolute;
+
+            width: 10px;
+
+            height: 14px;
+
+            background: #171717;
+
+            border-radius: 2px;
+
+            transition:
+                background 0.5s ease,
+                box-shadow 0.5s ease;
+
+        }
+
+
+        /* posições das janelas */
+
+        .j1  { left: 18px; top: 18px; }
+        .j2  { left: 45px; top: 18px; }
+        .j3  { left: 70px; top: 18px; }
+
+        .j4  { left: 18px; top: 48px; }
+        .j5  { left: 45px; top: 48px; }
+        .j6  { left: 70px; top: 48px; }
+
+        .j7  { left: 25px; top: 25px; }
+        .j8  { left: 60px; top: 25px; }
+        .j9  { left: 95px; top: 25px; }
+
+        .j10 { left: 25px; top: 60px; }
+        .j11 { left: 60px; top: 60px; }
+        .j12 { left: 95px; top: 60px; }
+
+        .j13 { left: 20px; top: 22px; }
+        .j14 { left: 50px; top: 22px; }
+
+        .j15 { left: 20px; top: 55px; }
+        .j16 { left: 50px; top: 55px; }
+
+        .j17 { left: 22px; top: 20px; }
+        .j18 { left: 57px; top: 20px; }
+        .j19 { left: 92px; top: 20px; }
+
+        .j20 { left: 22px; top: 55px; }
+        .j21 { left: 57px; top: 55px; }
+        .j22 { left: 92px; top: 55px; }
+
+        .j23 { left: 20px; top: 22px; }
+        .j24 { left: 52px; top: 22px; }
+
+        .j25 { left: 20px; top: 55px; }
+        .j26 { left: 52px; top: 55px; }
+
+
+        /* ===============================
+           SISTEMA RESTAURADO
+        =============================== */
+
+        .cidade.restaurada .janela {
+
+            background: #ffd34d;
+
+            box-shadow:
+                0 0 10px rgba(255, 211, 77, 0.8),
+                0 0 20px rgba(255, 211, 77, 0.4);
+
+        }
+
+
+        .cidade.restaurada .j1 {
+            transition-delay: 0.1s;
+        }
+
+        .cidade.restaurada .j2 {
+            transition-delay: 0.2s;
+        }
+
+        .cidade.restaurada .j3 {
+            transition-delay: 0.3s;
+        }
+
+        .cidade.restaurada .j4 {
+            transition-delay: 0.4s;
+        }
+
+        .cidade.restaurada .j5 {
+            transition-delay: 0.5s;
+        }
+
+        .cidade.restaurada .j6 {
+            transition-delay: 0.6s;
+        }
+
+        .cidade.restaurada .j7 {
+            transition-delay: 0.7s;
+        }
+
+        .cidade.restaurada .j8 {
+            transition-delay: 0.8s;
+        }
+
+        .cidade.restaurada .j9 {
+            transition-delay: 0.9s;
+        }
+
+        .cidade.restaurada .j10 {
+            transition-delay: 1s;
+        }
+
+
+        /* ===============================
+           MENSAGEM FINAL
+        =============================== */
+
+        .mensagem-final {
+
+            display: none;
+
+            margin-top: 30px;
+
+            text-align: center;
+
+            animation:
+                aparecer 1s ease forwards;
+
+        }
+
+
+        .mensagem-final.visivel {
+
+            display: block;
+
+        }
+
+
+        .mensagem-final h2 {
+
+            margin: 0;
+
+            color: #ffd34d;
+
+            font-family: "Baloo 2", sans-serif;
+
+            font-size: 2.8rem;
+
+            font-weight: 800;
+
+            text-shadow:
+                0 0 20px rgba(255, 211, 77, 0.3);
+
+        }
+
+
+        .mensagem-final p {
+
+            margin-top: 8px;
+
+            color: white;
+
+            font-family: "Nunito", sans-serif;
+
+            font-size: 1.2rem;
+
+            font-weight: 700;
+
+        }
+
+
+        @keyframes aparecer {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(20px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+
+        /* ===============================
+           RESPONSIVO
+        =============================== */
+
+        @media (max-width: 650px) {
+
+            .final-title h1 {
+
+                font-size: 2.1rem;
+
+            }
+
+
+            .codes {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .cidade {
+
+                height: 190px;
+
+            }
+
+
+            .lua {
+
+                right: 30px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="final-body">
+
+
+    <div class="final-container">
+
+
+        <!-- TÍTULO -->
+
+        <div class="final-title">
+
+            <h1>🔐 SISTEMA FINAL</h1>
+
+            <p>
+
+                O sistema energético aguarda os quatro códigos de restauração.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- PAINEL -->
+
+        <div class="final-panel">
+
+
+            <h2>
+
+                🔑 INSIRA OS CÓDIGOS DAS SALAS
+
+            </h2>
+
+
+            <div class="codes">
+
+
+                <!-- SALA 1 -->
+
+                <div class="code-input">
+
+                    <label for="codigoSala1">
+
+                        SALA 1
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="codigoSala1"
+                        maxlength="2"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+
+                <!-- SALA 2 -->
+
+                <div class="code-input">
+
+                    <label for="codigoSala2">
+
+                        SALA 2
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="codigoSala2"
+                        maxlength="2"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+
+                <!-- SALA 3 -->
+
+                <div class="code-input">
+
+                    <label for="codigoSala3">
+
+                        SALA 3
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="codigoSala3"
+                        maxlength="2"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+
+                <!-- SALA 4 -->
+
+                <div class="code-input">
+
+                    <label for="codigoSala4">
+
+                        SALA 4
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="codigoSala4"
+                        maxlength="2"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- BOTÃO -->
+
+            <button
+                class="restore-button"
+                onclick="restaurarSistema()"
+            >
+
+                ⚡ RESTAURAR SISTEMA
+
+            </button>
+
+
+
+            <!-- FEEDBACK -->
+
+            <div id="feedbackFinal">
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CIDADE -->
+
+        <div
+            id="cidade"
+            class="cidade"
+        >
+
+
+            <div class="lua"></div>
+
+
+            <div class="estrela estrela1"></div>
+
+            <div class="estrela estrela2"></div>
+
+            <div class="estrela estrela3"></div>
+
+            <div class="estrela estrela4"></div>
+
+            <div class="estrela estrela5"></div>
+
+
+
+            <!-- PRÉDIO 1 -->
+
+            <div class="predio predio1">
+
+                <span class="janela j1"></span>
+
+                <span class="janela j2"></span>
+
+                <span class="janela j3"></span>
+
+                <span class="janela j4"></span>
+
+                <span class="janela j5"></span>
+
+                <span class="janela j6"></span>
+
+            </div>
+
+
+
+            <!-- PRÉDIO 2 -->
+
+            <div class="predio predio2">
+
+                <span class="janela j7"></span>
+
+                <span class="janela j8"></span>
+
+                <span class="janela j9"></span>
+
+                <span class="janela j10"></span>
+
+                <span class="janela j11"></span>
+
+                <span class="janela j12"></span>
+
+            </div>
+
+
+
+            <!-- PRÉDIO 3 -->
+
+            <div class="predio predio3">
+
+                <span class="janela j13"></span>
+
+                <span class="janela j14"></span>
+
+                <span class="janela j15"></span>
+
+                <span class="janela j16"></span>
+
+            </div>
+
+
+
+            <!-- PRÉDIO 4 -->
+
+            <div class="predio predio4">
+
+                <span class="janela j17"></span>
+
+                <span class="janela j18"></span>
+
+                <span class="janela j19"></span>
+
+                <span class="janela j20"></span>
+
+                <span class="janela j21"></span>
+
+                <span class="janela j22"></span>
+
+            </div>
+
+
+
+            <!-- PRÉDIO 5 -->
+
+            <div class="predio predio5">
+
+                <span class="janela j23"></span>
+
+                <span class="janela j24"></span>
+
+                <span class="janela j25"></span>
+
+                <span class="janela j26"></span>
+
+            </div>
+
+
+
+            <!-- PRÉDIO 6 -->
+
+            <div class="predio predio6">
+
+                <span class="janela j1"></span>
+
+                <span class="janela j3"></span>
+
+                <span class="janela j4"></span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- MENSAGEM DE VITÓRIA -->
+
+        <div
+            id="mensagemFinal"
+            class="mensagem-final"
+        >
+
+            <h2>
+
+                ⚡ SISTEMA RESTAURADO! ⚡
+
+            </h2>
+
+            <p>
+
+                🎉 PARABÉNS! VOCÊS CONSEGUIRAM RESTAURAR O SISTEMA ENERGÉTICO.
+
+            </p>
+
+            <p>
+
+                🌎 A energia voltou a circular!
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <script>
+
+        function restaurarSistema() {
+
+            const codigo1 =
+                document.getElementById("codigoSala1").value
+                .trim()
+                .toUpperCase();
+
+            const codigo2 =
+                document.getElementById("codigoSala2").value
+                .trim()
+                .toUpperCase();
+
+            const codigo3 =
+                document.getElementById("codigoSala3").value
+                .trim()
+                .toUpperCase();
+
+            const codigo4 =
+                document.getElementById("codigoSala4").value
+                .trim()
+                .toUpperCase();
+
+
+            const feedback =
+                document.getElementById("feedbackFinal");
+
+            const cidade =
+                document.getElementById("cidade");
+
+            const mensagem =
+                document.getElementById("mensagemFinal");
+
+
+            /* ===============================
+               VERIFICAR CÓDIGOS
+            =============================== */
+
+            if (
+                codigo1 !== "07" ||
+                codigo2 !== "B1" ||
+                codigo3 !== "23" ||
+                codigo4 !== "01"
+            ) {
+
+                feedback.textContent =
+                    "❌ Um ou mais códigos estão incorretos. Revise os códigos liberados pelas salas.";
+
+                feedback.className =
+                    "feedback-final-error";
+
+                return;
+
+            }
+
+
+            /* ===============================
+               SISTEMA RESTAURADO
+            =============================== */
+
+            feedback.textContent =
+                "⚡ Todos os códigos foram reconhecidos!";
+
+            feedback.style.color =
+                "#ffd34d";
+
+
+            /* acende a cidade */
+
+            cidade.classList.add("restaurada");
+
+
+            /* mostra mensagem */
+
+            setTimeout(function() {
+
+                mensagem.classList.add("visivel");
+
+            }, 1200);
+
+
+            /* salva conclusão */
+
+            localStorage.setItem(
+                "missaoConcluida",
+                "true"
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
