@@ -259,8 +259,9 @@
 
             cursor: pointer;
 
-            transition: transform 0.2s ease,
-                        box-shadow 0.2s ease;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
 
         }
 
@@ -335,7 +336,9 @@
         }
 
 
-        /* lua */
+        /* ===============================
+           LUA
+        =============================== */
 
         .lua {
 
@@ -359,7 +362,9 @@
         }
 
 
-        /* estrelas */
+        /* ===============================
+           ESTRELAS
+        =============================== */
 
         .estrela {
 
@@ -404,7 +409,9 @@
         }
 
 
-        /* prédios */
+        /* ===============================
+           PRÉDIOS
+        =============================== */
 
         .predio {
 
@@ -485,7 +492,9 @@
         }
 
 
-        /* janelas */
+        /* ===============================
+           JANELAS
+        =============================== */
 
         .janela {
 
@@ -1014,7 +1023,7 @@
 
             </h2>
 
-            <p>
+            <p id="mensagemEquipe">
 
                 🎉 PARABÉNS! VOCÊS CONSEGUIRAM RESTAURAR O SISTEMA ENERGÉTICO.
 
@@ -1023,6 +1032,12 @@
             <p>
 
                 🌎 A energia voltou a circular!
+
+            </p>
+
+            <p>
+
+                🏆 MISSÃO CONCLUÍDA!
 
             </p>
 
@@ -1036,6 +1051,11 @@
     <script>
 
         function restaurarSistema() {
+
+
+            /* ===============================
+               PEGAR OS CÓDIGOS
+            =============================== */
 
             const codigo1 =
                 document.getElementById("codigoSala1").value
@@ -1058,6 +1078,11 @@
                 .toUpperCase();
 
 
+
+            /* ===============================
+               ELEMENTOS DA TELA
+            =============================== */
+
             const feedback =
                 document.getElementById("feedbackFinal");
 
@@ -1066,6 +1091,19 @@
 
             const mensagem =
                 document.getElementById("mensagemFinal");
+
+            const mensagemEquipe =
+                document.getElementById("mensagemEquipe");
+
+
+
+            /* ===============================
+               NOME DA EQUIPE
+            =============================== */
+
+            const nomeEquipe =
+                localStorage.getItem("nomeEquipe");
+
 
 
             /* ===============================
@@ -1090,9 +1128,20 @@
             }
 
 
+
             /* ===============================
                SISTEMA RESTAURADO
             =============================== */
+
+            if (nomeEquipe) {
+
+                mensagemEquipe.textContent =
+                    "🎉 PARABÉNS, " +
+                    nomeEquipe +
+                    "! VOCÊS CONSEGUIRAM RESTAURAR O SISTEMA ENERGÉTICO.";
+
+            }
+
 
             feedback.textContent =
                 "⚡ Todos os códigos foram reconhecidos!";
@@ -1101,12 +1150,18 @@
                 "#ffd34d";
 
 
-            /* acende a cidade */
+
+            /* ===============================
+               ACENDER A CIDADE
+            =============================== */
 
             cidade.classList.add("restaurada");
 
 
-            /* mostra mensagem */
+
+            /* ===============================
+               MOSTRAR MENSAGEM FINAL
+            =============================== */
 
             setTimeout(function() {
 
@@ -1115,7 +1170,10 @@
             }, 1200);
 
 
-            /* salva conclusão */
+
+            /* ===============================
+               REGISTRAR CONCLUSÃO
+            =============================== */
 
             localStorage.setItem(
                 "missaoConcluida",
